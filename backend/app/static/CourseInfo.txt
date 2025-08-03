@@ -1,0 +1,476 @@
+**Course Title:** Studio 1
+**SMS Code:** ID502001 / IA502001
+**Level:** 5
+**Credits:** 15
+**Prerequisites:** None
+**Directed Learning:** 60
+**Workplace Learning:** nil
+**Self-Directed Learning:** 90
+**Total Learning:** 150
+**Description:** Introduces learners to professional practices in technical environments, including teamwork, communication, and version control tools like GitHub.
+
+**Course Title:** Studio 2
+**SMS Code:** ID503001 / IA503001
+**Level:** 5
+**Credits:** 15
+**Prerequisites:** ID502001 / IA502001
+**Directed Learning:** 60
+**Workplace Learning:** nil
+**Self-Directed Learning:** 90
+**Total Learning:** 150
+**Description:** Focuses on user-centric project planning and teamwork skills to solve simple IT problems through iterative development and design thinking.
+
+**Course Title:** Programming 1
+**SMS Code:** ID510001 / IA510001
+**Level:** 5
+**Credits:** 15
+**Prerequisites:** None
+**Directed Learning:** 60
+**Workplace Learning:** 0
+**Self-Directed Learning:** 90
+**Total Learning:** 150
+**Description:** Covers foundational programming concepts, problem decomposition, and basic data structures using structured and procedural programming techniques.
+
+**Course Title:** Programming 2
+**SMS Code:** ID511001 / IA511001
+**Level:** 5
+**Credits:** 15
+**Prerequisites:** ID510001
+**Directed Learning:** 60
+**Workplace Learning:** nil
+**Self-Directed Learning:** 90
+**Total Learning:** 150
+**Description:** Expands on Programming 1 by introducing object-oriented programming (OOP) concepts such as classes, inheritance, and GUIs.
+
+**Course Title:** Fundamentals of Web Development
+**SMS Code:** ID512002 / IA512002
+**Level:** 5
+**Credits:** 15
+**Prerequisites:** ID510001
+**Directed Learning:** 60
+**Workplace Learning:** 0
+**Self-Directed Learning:** 90
+**Total Learning:** 150
+**Description:** Equips learners with skills to build simple web applications using HTML, CSS, JavaScript, and basic client/server interactions.
+
+**Course Title:** Introduction to Networks
+**SMS Code:** ID515001 / IA515001
+**Level:** 5
+**Credits:** 15
+**Prerequisites:** none
+**Directed Learning:** 60
+**Workplace Learning:** nil
+**Self-Directed Learning:** 90
+**Total Learning:** 150
+**Description:** Introduces networking fundamentals including IP addressing, OSI model, and basic LAN configuration and troubleshooting.
+
+**Course Title:** Platforms and Devices
+**SMS Code:** ID520003 / IA520003
+**Level:** 5
+**Credits:** 15
+**Prerequisites:** None
+**Directed Learning:** 60
+**Workplace Learning:** nil
+**Self-Directed Learning:** 90
+**Total Learning:** 150
+**Description:** Explores operating systems, hardware components, virtualization, and sustainability in IT device use and disposal.
+
+**Course Title:** Maths for IT
+**SMS Code:** ID521001 / IA521001
+**Level:** 5
+**Credits:** 15
+**Prerequisites:** none
+**Directed Learning:** 60
+**Workplace Learning:** nil
+**Self-Directed Learning:** 90
+**Total Learning:** 150
+**Description:** Teaches discrete mathematics fundamentals relevant to IT, including logic, algorithms, binary systems, and encryption basics.
+
+**Course Title:** Year One Special Topic
+**SMS Code:** ID530151 / IA530151
+**Level:** 5
+**Credits:** 15
+**Prerequisites:** none
+**Directed Learning:** 30
+**Workplace Learning:** nil
+**Self-Directed Learning:** 120
+**Total Learning:** 150
+**Description:** Allows students to conduct an in-depth independent study on a specific IT topic with supervision and a structured learning plan.
+
+**Course Title:** Studio 3
+**SMS Code:** ID606001 / IA606001
+**Level:** 6
+**Credits:** 15
+**Prerequisites:** ID503001 / IA503001
+**Directed Learning:** 60
+**Workplace Learning:** 0
+**Self-Directed Learning:** 90
+**Total Learning:** 150
+**Description:** Applies project management methods and collaborative development tools to create user-focused IT solutions in a team setting.
+
+**Course Title:** Studio 4
+**SMS Code:** ID622001 / IA622001
+**Level:** 6
+**Credits:** 15
+**Prerequisites:** ID606001
+**Directed Learning:** 60
+**Workplace Learning:** 0
+**Self-Directed Learning:** 90
+**Total Learning:** 150
+**Description:** Builds on Studio 3, requiring production-quality team projects that meet professional standards in quality, ethics, and sustainability.
+
+**Course Title:** Databases 2
+**SMS Code:** ID605001 / IA605001
+**Level:** 6
+**Credits:** 15
+**Prerequisites:** IN505001, IN511001
+**Directed Learning:** 60
+**Workplace Learning:** 0
+**Self-Directed Learning:** 90
+**Total Learning:** 150
+**Description:** Covers relational database design, normalization, and SQL querying with an emphasis on relational theory and data integrity.
+
+**Course Title:** Introductory Application Development Concepts
+**SMS Code:** ID607001 / IA607001
+**Level:** 6
+**Credits:** 15
+**Prerequisites:** IN511001
+**Directed Learning:** 60
+**Workplace Learning:** 0
+**Self-Directed Learning:** 90
+**Total Learning:** 150
+**Description:** Introduces full-stack development concepts, design patterns, and dynamic database-driven applications using modern frameworks.
+
+**Course Title:** Intermediate Application Development Concepts
+**SMS Code:** ID608001 / IA608001
+**Level:** 6
+**Credits:** 15
+**Prerequisites:** ID607001
+**Directed Learning:** 60
+**Workplace Learning:** 0
+**Self-Directed Learning:** 90
+**Total Learning:** 150
+**Description:** Expands application development to include full-stack systems, API use, security, session handling, and test automation.
+
+**Course Title:** Switching, Routing and Wireless Essentials
+**SMS Code:** ID615008 / IA615008
+**Level:** 6
+**Credits:** 15
+**Prerequisites:** IN515001
+**Directed Learning:** 60
+**Workplace Learning:** 0
+**Self-Directed Learning:** 90
+**Total Learning:** 150
+**Description:** Focuses on configuring routers and switches, VLANs, dynamic routing, and wireless networking in small-to-medium networks.
+
+**Course Title:** Operating Systems Concepts
+**SMS Code:** ID616001 / IA616001
+**Level:** 6
+**Credits:** 15
+**Prerequisites:** IN510001 & IN520002
+**Directed Learning:** 60
+**Workplace Learning:** 0
+**Self-Directed Learning:** 90
+**Total Learning:** 150
+**Description:** Explores OS internals, Linux system administration, scripting, and kernel-level concepts like scheduling and memory management.
+
+**Course Title:** Operations Engineering 1
+**SMS Code:** ID609001 / IA609001
+**Level:** 6
+**Credits:** 15
+**Prerequisites:** ID616001
+**Directed Learning:** 60
+**Workplace Learning:** 0
+**Self-Directed Learning:** 90
+**Total Learning:** 150
+**Description:** Develops advanced system administration skills including scripting, backups, cloud deployment, and directory services.
+
+Course Title: Embedded Systems
+SMS Code: ID620001 / IA620001
+Level: 6
+Credits: 15
+Prerequisites: IN520002
+Directed Learning: 60
+Workplace Learning: 0
+Self-Directed Learning: 90
+Total Learning: 150
+Description: Introduces fundamental concepts of computer architecture and embedded systems. Students design and implement embedded hardware/software solutions without delving into low-level CPU or assembly programming.
+
+Course Title: Automation and Robotics
+SMS Code: ID621001 / IA621001
+Level: 6
+Credits: 15
+Prerequisites: ID620001
+Directed Learning: 60
+Workplace Learning: 0
+Self-Directed Learning: 90
+Total Learning: 150
+Description: Expands on embedded systems to develop interactive robotic and automated systems. Covers sensors, mechanical principles, interaction design, and hands-on project work using development platforms.
+
+Course Title: Introductory Game Development
+SMS Code: ID623001
+Level: 6
+Credits: 15
+Prerequisites: IN/ID511001 (Programming 2)
+Directed Learning: 48
+Workplace Learning: 0
+Self-Directed Learning: 102
+Total Learning: 150
+Description: Introduces game development using Unity and Visual Studio Code. Covers basic game mechanics, scripting, AI, and algorithms through a portfolio-based assessment.
+
+Course Title: Year Two Special Topic
+SMS Code: ID630151 / IA630151
+Level: 6
+Credits: 15
+Prerequisites: 120 credits at Level 5
+Directed Learning: 30
+Workplace Learning: 0
+Self-Directed Learning: 120
+Total Learning: 150
+Description: A self-directed research and development project on a specialized IT topic. Students work closely with a supervisor to create a tailored study plan and deliver a comprehensive project.
+
+Course Title: Studio 5
+SMS Code: ID728001 / IA728001
+Level: 7
+Credits: 15
+Prerequisites: ID622001
+Directed Learning: 15
+Workplace Learning: 0
+Self-Directed Learning: 135
+Total Learning: 150
+Description: Involves the execution of large-scale, real-world IT projects in teams. Emphasizes problem-solving, professional collaboration, and technical skills in complex and unfamiliar contexts.
+
+**Course Title:** Studio 6
+**SMS Code:** ID732001
+**Level:** 7
+**Credits:** 15
+**Prerequisites:** ID728001
+**Directed Learning:** 15
+**Workplace Learning:** 0
+**Self-Directed Learning:** 135
+**Total Learning:** 150
+**Description:** Final studio course involving advanced real-client project work. Learners tackle complex IT problems, specialize in technical domains, and demonstrate leadership and ownership of development processes.
+
+**Course Title:** Developing Flexible IT Courses
+**SMS Code:** ID703001
+**Level:** 7
+**Credits:** 15
+**Prerequisites:** IN502001
+**Directed Learning:** 60
+**Workplace Learning:** nil
+**Self-Directed Learning:** 90
+**Total Learning:** 150
+**Description:** Prepares learners for IT training roles by teaching them to design, deliver, and evaluate computer-based tutorials and blended learning programmes, including Treaty of Waitangi considerations.
+
+**Course Title:** Quality Assurance and Software Testing
+**SMS Code:** ID733001
+**Level:** 7
+**Credits:** 15
+**Prerequisites:** None
+**Directed Learning:** 60
+**Workplace Learning:** nil
+**Self-Directed Learning:** 90
+**Total Learning:** 150
+**Description:** Introduces software testing theory and practice, including test planning, automation (e.g. Selenium), defect detection, and critical analysis of testing’s role in software development.
+
+**Course Title:** Databases 3
+**SMS Code:** ID705001 / IA705001
+**Level:** 7
+**Credits:** 15
+**Prerequisites:** ID605001
+**Directed Learning:** 60
+**Workplace Learning:** 0
+**Self-Directed Learning:** 90
+**Total Learning:** 150
+**Description:** Advanced course covering enterprise database design, performance optimization, data security, and administration. Includes hands-on work with complex queries, stored procedures, and real-world DBA tasks.
+
+**Course Title:** Security
+**SMS Code:** ID724001 / IA724001
+**Level:** 7
+**Credits:** 15
+**Prerequisites:** ID616001
+**Directed Learning:** 60
+**Workplace Learning:** nil
+**Self-Directed Learning:** 90
+**Total Learning:** 150
+**Description:** Teaches foundational and practical information security concepts, including cryptography, vulnerability assessment, system hardening, and forensics using a "learn by attacking, defend by fixing" model.
+
+**Course Title:** Advanced Application Development Concepts
+**SMS Code:** ID730001
+**Level:** 7
+**Credits:** 15
+**Prerequisites:** ID608001
+**Directed Learning:** 60
+**Workplace Learning:** 0
+**Self-Directed Learning:** 90
+**Total Learning:** 150
+**Description:**Covers the development of efficient and scalable full-stack applications using advanced programming techniques such as code optimization, caching, and use of modern frameworks and deployment methods like WebSockets and CDNs.
+
+**Course Title:** Advanced Algorithms
+**SMS Code:** ID711002
+**Level:** 7
+**Credits:** 15
+**Prerequisites:** ID608001
+**Directed Learning:** 60
+**Workplace Learning:** 0
+**Self-Directed Learning:** 90
+**Total Learning:** 150
+**Description:**Explores complex algorithmic strategies including genetic algorithms, signal processing, NLP, and optimization. Emphasizes solving nontrivial problems with performance-focused and resource-aware implementations.
+
+**Course Title:** Mobile Application Development
+**SMS Code:** ID721001 / IA721001
+**Level:** 7
+**Credits:** 15
+**Prerequisites:** ID607001
+**Directed Learning:** 60
+**Workplace Learning:** 0
+**Self-Directed Learning:** 90
+**Total Learning:** 150
+**Description:**Teaches mobile app design and development using industry standards. Learners build and publish applications, focusing on UX, native vs web app trade-offs, SDKs, and publishing processes.
+
+**Course Title:** Artificial Intelligence and Data Science
+**SMS Code:** ID727001
+**Level:** 7
+**Credits:** 15
+**Prerequisites:** IN511001, IN521001
+**Directed Learning:** 60
+**Workplace Learning:** 0
+**Self-Directed Learning:** 90
+**Total Learning:** 150
+**Description:**Introduces AI and data science concepts including neural networks, natural language processing, web scraping, transfer learning, ethics in AI, and use of machine learning models for solving real-world problems.
+
+**Course Title:** Operations Engineering 2
+**SMS Code:** ID734001
+**Level:** 7
+**Credits:** 15
+**Prerequisites:** ID609001
+**Directed Learning:** 60
+**Workplace Learning:** nil
+**Self-Directed Learning:** 90
+**Total Learning:** 150
+**Description:**Builds advanced system administration skills within enterprise environments. Covers disaster recovery planning, ethical responsibilities, configuration management tools, and deploying monitoring and backup solutions.
+
+**Course Title:** UX Engineering
+**SMS Code:** ID729002
+**Level:** 7
+**Credits:** 15
+**Prerequisites:** ID608001
+**Directed Learning:** 60
+**Workplace Learning:** nil
+**Self-Directed Learning:** 90
+**Total Learning:** 150
+**Description:**Focuses on advanced frontend development and UX design. Combines technical skills with design thinking, inclusive design principles, user testing, and sustainability to create high-quality user interfaces.
+
+**Course Title:** Administering a Virtual Infrastructure
+**SMS Code:** ID720001 / IA720001
+**Level:** 7
+**Credits:** 15
+**Prerequisites:** ID719001
+**Directed Learning:** 60
+**Workplace Learning:** nil
+**Self-Directed Learning:** 90
+**Total Learning:** 150
+**Description:**Equips learners with practical skills in planning, deploying, and managing enterprise-grade virtual environments. Emphasizes virtualization performance tuning, storage/network setup, and cloud VM deployment.
+
+**Course Title:** Advanced Networking
+**SMS Code:** ID723001
+**Level:** 7
+**Credits:** 15
+**Prerequisites:** ID615006
+**Directed Learning:** 60
+**Workplace Learning:** nil
+**Self-Directed Learning:** 90
+**Total Learning:** 150
+**Description:**Teaches the design and implementation of high-performance, scalable, and secure networks using advanced protocols and technologies such as BGP, MPLS, VRF, SDN, and QoS. Emphasizes real-world fault tolerance and performance evaluation.
+
+**Course Title:** Enterprise Networking, Security and Automation
+**SMS Code:** ID735001
+**Level:** 7
+**Credits:** 15
+**Prerequisites:** ID615008 / IA615008
+**Directed Learning:** 60
+**Workplace Learning:** nil
+**Self-Directed Learning:** 90
+**Total Learning:** 150
+**Description:**Prepares learners to design and manage secure enterprise networks. Covers advanced routing, ACLs, NAT, virtualization, SDN, and automation using tools and curriculum from the Cisco Network Academy.
+
+**Course Title:** Internet of Things and Cloud Computing
+**SMS Code:** ID736001 / IA736001
+**Level:** 7
+**Credits:** 15
+**Prerequisites:** ID620001 / IA620001 & ID609001 / IA609001
+**Directed Learning:** 60
+**Workplace Learning:** 0
+**Self-Directed Learning:** 90
+**Total Learning:** 150
+**Description:**Explores IoT system design and cloud integration. Learners analyze architectures, standards, and use cases, then design and develop cloud-based IoT solutions using modern platforms, DevOps tools, and security best practices.
+
+**Course Title:** Advanced Game Development
+**SMS Code:** ID737001 / IA737001
+**Level:** 7
+**Credits:** 15
+**Prerequisites:** ID511001 / IA511001
+**Directed Learning:** 60
+**Workplace Learning:** 0
+**Self-Directed Learning:** 90
+**Total Learning:** 150
+**Description:**Covers advanced game development techniques using Unity and C#. Topics include AR/VR, game graphics and audio, and real-time programming for interactive experiences, culminating in a fully developed game demo project.
+
+**Course Title:** Business Analysis and Intelligence
+**SMS Code:** ID738001 / IA738001
+**Level:** 7
+**Credits:** 15
+**Prerequisites:** ID521001 / IA521001
+**Directed Learning:** 60
+**Workplace Learning:** 0
+**Self-Directed Learning:** 90
+**Total Learning:** 150
+**Description:**Equips learners with skills in business analysis, data analytics, and the application of AI to solve organizational problems. Includes tools like Power BI, R, and Tableau for decision-making and innovation.
+
+**Course Title:** Year Three Special Topic
+**SMS Code:** ID730151 / IA730151
+**Level:** 7
+**Credits:** 15
+**Prerequisites:** 120 L5 credits, 90 L6 credits
+**Directed Learning:** 15
+**Workplace Learning:** 0
+**Self-Directed Learning:** 135
+**Total Learning:** 150
+**Description:**Independent research course allowing deep investigation into a specialized IT topic not covered by existing papers. Requires a negotiated study plan and supervision, ideal for self-directed and academically strong learners.
+
+**Course Title:** Unspecified Credits – Level 5
+**SMS Code:** ID550001 / IA550001
+**Level:** 5
+**Credits:** 15
+**Prerequisites:** n/a
+**Directed Learning:** 0
+**Workplace Learning:** 0
+**Self-Directed Learning:** 0
+**Total Learning:** 0
+**Description:**Used to record externally completed courses at Level 5 that do not overlap with existing BIT papers. Eligible courses must contribute to a degree and align in credit weight. No fees apply.
+
+**Course Title:** Unspecified Credits – Level 6
+**SMS Code:** ID650001 / IA650001
+**Level:** 6
+**Credits:** 15
+**Prerequisites:** n/a
+**Directed Learning:** 0
+**Workplace Learning:** 0
+**Self-Directed Learning:** 0
+**Total Learning:** 0
+**Description:**Acts as a placeholder for approved external Level 6 courses contributing to the BIT degree. Credits must be unique and not overlap with internal coursework. No formal delivery or assessment by BIT required.
+
+**Course Title:** Unspecified Credits – Level 7
+**SMS Code:** ID750001 / IA750001
+**Level:** 7
+**Credits:** 15
+**Prerequisites:** n/a
+**Directed Learning:** 0
+**Workplace Learning:** 0
+**Self-Directed Learning:** 0
+**Total Learning:** 0
+**Description:**Provides recognition for approved Level 7 study completed outside the BIT program. Used when external courses align with program outcomes but are not covered by internal offerings. No cost incurred.
+
+
+
+
