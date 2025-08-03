@@ -9,7 +9,7 @@ cd backend
 :: Create virtual environment if not exists
 if not exist venv (
     echo Creating Python virtual environment...
-    python -m venv venv
+    py -m venv venv
 )
 
 :: Activate virtual environment
