@@ -14,7 +14,7 @@ if not exist venv (
 
 :: Activate virtual environment
 echo Activating virtual environment...
-call venv\Scripts\activate.bat
+call venv\Scripts\activate
 
 :: Install Python dependencies
 echo Installing Python packages...
