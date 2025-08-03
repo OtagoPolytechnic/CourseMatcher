@@ -16,6 +16,12 @@ if not exist venv (
 echo Activating virtual environment...
 call venv\Scripts\activate
 
+if not exist .env (
+    echo Creating .env file...
+    echo OPENAI_API_KEY=sk-<your-key-here> > .env
+    echo Place your OpenAI API key in backend\.env
+)
+
 :: Install Python dependencies
 echo Installing Python packages...
 pip install -r requirements.txt
