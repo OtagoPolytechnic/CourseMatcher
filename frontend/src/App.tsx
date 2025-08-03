@@ -1,4 +1,4 @@
-import CourseList from './components/CourseList';
+import CourseList from './pages/CourseList';
 import './style.css';
 
 function App() {
