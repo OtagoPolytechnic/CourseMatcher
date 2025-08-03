@@ -18,8 +18,7 @@ call venv\Scripts\activate
 
 if not exist .env (
     echo Creating .env file...
-    echo OPENAI_API_KEY=sk-<your-key-here> > .env
-    echo Place your OpenAI API key in backend\.env
+    echo OPENAI_API_KEY=your-api-key-goes-here > .env
 )
 
 :: Install Python dependencies
