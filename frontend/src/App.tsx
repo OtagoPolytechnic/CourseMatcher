@@ -1,11 +1,16 @@
-import CourseList from './pages/CourseList';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import ProgramNav from './pages/ProgramNav';
+import BachelorIT from './pages/BachelorIT';
 import './style.css';
 
 function App() {
   return (
-    <div>
-      <CourseList />
-    </div>
+    <Router>
+      <ProgramNav />
+      <Routes>
+        <Route path="/" element={<BachelorIT />} />
+      </Routes>
+    </Router>
   );
 }
 
