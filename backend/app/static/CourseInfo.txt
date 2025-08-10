@@ -7,7 +7,7 @@
 **Workplace Learning:** nil
 **Self-Directed Learning:** 90
 **Total Learning:** 150
-**Description:** Introduces learners to professional practices in technical environments, including teamwork, communication, and version control tools like GitHub.
+**Description:** This course introduces learners to the fundamentals of professionalism in a technical environment. By the end of the course, learners will be able to communicate appropriately in informal and semi-formal written and verbal contexts; discern functional and non-functional aspects within a problem domain in the context of data modelling; and use collaboration tools and workflows to contribute to a simple group project. Topics include problem domains, design thinking, introduction to databases, time management, report writing, oral presentations, version control (GitHub), and object-oriented concepts.
 
 **Course Title:** Studio 2
 **SMS Code:** ID503001 / IA503001
@@ -18,7 +18,7 @@
 **Workplace Learning:** nil
 **Self-Directed Learning:** 90
 **Total Learning:** 150
-**Description:** Focuses on user-centric project planning and teamwork skills to solve simple IT problems through iterative development and design thinking.
+**Description:** This course introduces learners to user-centric and technical project planning techniques to create solutions to simple IT problems. By the end of the course, learners will be able to employ sound communication to elicit user requirements to inform the planning process, and work as a member of a team to produce a simple technical output. Topics include basic iterative development, UML, basic project management skills and tools, design thinking, stand-up meetings, client interviews, and an introduction to user stories.
 
 **Course Title:** Programming 1
 **SMS Code:** ID510001 / IA510001
@@ -29,7 +29,7 @@
 **Workplace Learning:** 0
 **Self-Directed Learning:** 90
 **Total Learning:** 150
-**Description:** Covers foundational programming concepts, problem decomposition, and basic data structures using structured and procedural programming techniques.
+**Description:** This course introduces learners to the concepts of program design and programming fundamentals. By the end of the course, learners will be able to create programs using basic programming constructs and simple data structures to solve specified problems, and apply a logic depiction method to decompose appropriate simple problems. Topics include program design, algorithms, structured diagrams (UML), if statements, nested ifs, switch statements, loops, arrays, data types and records, reading files of records, text files, and version control.
 
 **Course Title:** Programming 2
 **SMS Code:** ID511001 / IA511001
@@ -40,7 +40,7 @@
 **Workplace Learning:** nil
 **Self-Directed Learning:** 90
 **Total Learning:** 150
-**Description:** Expands on Programming 1 by introducing object-oriented programming (OOP) concepts such as classes, inheritance, and GUIs.
+**Description:** This course enables learners to build simple object-oriented (OO) applications and identify situations most appropriate for OO implementation. By the end of the course, learners will be able to build interactive, event-driven GUI applications using pre-built components, and declare and implement user-defined classes using encapsulation, inheritance, and polymorphism. Topics include problem analysis and decomposition, principles of good class design, logic of basic algorithms, use of core complex data structures, and good programming practices that are independent of the language or model used.
 
 **Course Title:** Fundamentals of Web Development
 **SMS Code:** ID512002 / IA512002
@@ -51,18 +51,18 @@
 **Workplace Learning:** 0
 **Self-Directed Learning:** 90
 **Total Learning:** 150
-**Description:** Equips learners with skills to build simple web applications using HTML, CSS, JavaScript, and basic client/server interactions.
+**Description:** This course enables learners to use basic technologies for the development of web-based functionality. By the end of the course, learners will be able to develop simple web-based applications using industry relevant client/server-side programming languages and basic client/server communication, and use industry relevant tools and workflows in the development of web-based applications. Topics include web communication (client/server relationship), HTML, CSS, JavaScript, libraries/frameworks, responsive design, APIs, and basic deployment.
 
 **Course Title:** Introduction to Networks
 **SMS Code:** ID515001 / IA515001
 **Level:** 5
 **Credits:** 15
-**Prerequisites:** none
+**Prerequisites:** None
 **Directed Learning:** 60
 **Workplace Learning:** nil
 **Self-Directed Learning:** 90
 **Total Learning:** 150
-**Description:** Introduces networking fundamentals including IP addressing, OSI model, and basic LAN configuration and troubleshooting.
+**Description:** This course introduces learners to fundamental networking concepts and technologies, covering the basics of network theory and skills needed to implement a simple network. By the end of the course, learners will be able to design and build a simple local area network using device addressing schemes and basic network configurations, and configure and troubleshoot end-to-end connectivity between local and remote networks using security best practices. Topics include the OSI model, types of networks, application layer functionality, transport layer protocols (TCP/UDP), network layer protocols (IPv4), layer 3 addressing and subnetting, data link layer concepts and addressing, network cabling, and configuring and testing a network.
 
 **Course Title:** Platforms and Devices
 **SMS Code:** ID520003 / IA520003
@@ -73,29 +73,29 @@
 **Workplace Learning:** nil
 **Self-Directed Learning:** 90
 **Total Learning:** 150
-**Description:** Explores operating systems, hardware components, virtualization, and sustainability in IT device use and disposal.
+**Description:** This course enables learners to use a range of devices, platforms and concepts utilised within the IT industry. By the end of the course, learners will be able to install and configure operating systems on devices for functionality and network connectivity, select and apply systems tools, command line and scripting to configure, maintain, and secure operating systems in local and virtual settings, and troubleshoot hardware and operating system faults for the main components of a computer. Topics include installing, configuring, and selecting PC hardware components, operating systems installation and maintenance, overview of operating systems (mobile, desktop, server), virtualisation, transmission protocols (e.g., FTP, SSH), file systems, backup and RAID systems, troubleshooting hardware and software, connecting and configuring devices (Bluetooth, Wi-Fi, printers, etc.), mounting drives, command line proficiency, basic network configuration, embedded systems (Raspberry Pi, Arduino), environmental impact of IT, and sustainability issues in purchasing, using, and disposing of devices.
 
 **Course Title:** Maths for IT
 **SMS Code:** ID521001 / IA521001
 **Level:** 5
 **Credits:** 15
-**Prerequisites:** none
+**Prerequisites:** None
 **Directed Learning:** 60
 **Workplace Learning:** nil
 **Self-Directed Learning:** 90
 **Total Learning:** 150
-**Description:** Teaches discrete mathematics fundamentals relevant to IT, including logic, algorithms, binary systems, and encryption basics.
+**Description:** This course introduces learners to mathematical concepts and methods that underpin computer systems, primarily within the field of discrete mathematics. By the end of the course, learners will be able to use the mathematical structures and algorithms that underpin digital systems, and apply mathematical methods to solve problems in an Information Technology context. Topics include logic circuits, decimal and binary number systems, vectors and matrices, randomness and probability, factorials, permutations and combinations, check digits, random number generation, encryption, algorithms, iteration, recursion, hash tables and hash functions, and computational complexity.
 
 **Course Title:** Year One Special Topic
 **SMS Code:** ID530151 / IA530151
 **Level:** 5
 **Credits:** 15
-**Prerequisites:** none
+**Prerequisites:** None
 **Directed Learning:** 30
 **Workplace Learning:** nil
 **Self-Directed Learning:** 120
 **Total Learning:** 150
-**Description:** Allows students to conduct an in-depth independent study on a specific IT topic with supervision and a structured learning plan.
+**Description:** This course allows learners to pursue an individual course of study focused in depth on a specific aspect of Information Technology. By the end of the course, learners will be able to analyse a specific topic whilst applying the underlying principles and concepts to the field of study. The process may include producing a proposal identifying the purpose, scope, required skills and knowledge, and learning and assessment plan; carrying out the special topic work; compiling a work log or progress report; reviewing progress with a supervisor; and presenting assessment material or a final report.
 
 **Course Title:** Studio 3
 **SMS Code:** ID606001 / IA606001
@@ -106,7 +106,7 @@
 **Workplace Learning:** 0
 **Self-Directed Learning:** 90
 **Total Learning:** 150
-**Description:** Applies project management methods and collaborative development tools to create user-focused IT solutions in a team setting.
+**Description:** This course enables learners to use an industry-relevant project management approach to produce simple, functional group outputs. By the end of the course, learners will be able to analyse user requirements to inform technical project work and produce user-centric functionality, and employ ethical and sustainable development methodologies and tools in a team environment. Topics include iterative design thinking strategies, user-driven development, modern team collaboration and development frameworks, sound communication and project management strategies, and producing high-quality technical outputs.
 
 **Course Title:** Studio 4
 **SMS Code:** ID622001 / IA622001
@@ -117,7 +117,7 @@
 **Workplace Learning:** 0
 **Self-Directed Learning:** 90
 **Total Learning:** 150
-**Description:** Builds on Studio 3, requiring production-quality team projects that meet professional standards in quality, ethics, and sustainability.
+**Description:** This course focuses on producing a professional, high-quality group project adhering to industry-relevant quality assurance and ethical practices. By the end of the course, learners will be able to select and apply industry-standard tools and processes to solve non-trivial problems in a team environment, and analyse and manage development challenges to create production-quality outputs. Topics include security, privacy, quality, user experience, deployment, modern quality assurance practices, appropriate use of automation, and efficient cross-discipline teamwork.
 
 **Course Title:** Databases 2
 **SMS Code:** ID605001 / IA605001
@@ -128,7 +128,7 @@
 **Workplace Learning:** 0
 **Self-Directed Learning:** 90
 **Total Learning:** 150
-**Description:** Covers relational database design, normalization, and SQL querying with an emphasis on relational theory and data integrity.
+**Description:** This course provides an understanding of the fundamentals of database management systems, with emphasis on relational systems. By the end of the course, learners will be able to plan and build a normalised relational database to solve a specified problem, and use syntactically correct SQL to write database queries that ensure data integrity. Topics include the role of relational databases and relational database management systems, relational algebra, functional dependencies, normalisation, RDBMS architecture, query construction and optimisation, data modelling, design and implementation of relational databases, and principles of database administration and security.
 
 **Course Title:** Introductory Application Development Concepts
 **SMS Code:** ID607001 / IA607001
@@ -139,7 +139,7 @@
 **Workplace Learning:** 0
 **Self-Directed Learning:** 90
 **Total Learning:** 150
-**Description:** Introduces full-stack development concepts, design patterns, and dynamic database-driven applications using modern frameworks.
+**Description:** This course introduces the concepts of application development, including algorithms, data structures, and design patterns required to use a simple, industry-relevant development framework. By the end of the course, learners will be able to design and build secure applications with dynamic database functionality following an appropriate software development methodology. Topics include server and client-side programming, design patterns such as MVC, database integration (ORMs), database migration, automated testing, and session-based authentication.
 
 **Course Title:** Intermediate Application Development Concepts
 **SMS Code:** ID608001 / IA608001
@@ -150,7 +150,7 @@
 **Workplace Learning:** 0
 **Self-Directed Learning:** 90
 **Total Learning:** 150
-**Description:** Expands application development to include full-stack systems, API use, security, session handling, and test automation.
+**Description:** This course extends the concepts of application development, including algorithms, data structures, and design patterns, required to use complex, industry-relevant frameworks or libraries. By the end of the course, learners will be able to apply design patterns and programming principles using software development best practices, and design and implement full-stack applications using industry-relevant programming languages. Topics include APIs, database integration, deployment, design patterns, frameworks or libraries, ORMs, session-based authentication, automated testing, security, and parallelism.
 
 **Course Title:** Switching, Routing and Wireless Essentials
 **SMS Code:** ID615008 / IA615008
@@ -161,7 +161,7 @@
 **Workplace Learning:** 0
 **Self-Directed Learning:** 90
 **Total Learning:** 150
-**Description:** Focuses on configuring routers and switches, VLANs, dynamic routing, and wireless networking in small-to-medium networks.
+**Description:** This course enables learners to apply knowledge of router and switch operation, network architecture, and services to configure small-to-medium business networks. By the end of the course, learners will be able to design and build a network for availability and redundancy, and configure and troubleshoot flexible local area networks using virtual and wireless technologies. Topics include basic and enhanced switching concepts, VLANs, VTP, RSTP, PVSTP, 802.1q, router operations, static and dynamic routing, ACLs, DHCP, wireless LAN concepts, and LAN security.
 
 **Course Title:** Operating Systems Concepts
 **SMS Code:** ID616001 / IA616001
@@ -172,7 +172,7 @@
 **Workplace Learning:** 0
 **Self-Directed Learning:** 90
 **Total Learning:** 150
-**Description:** Explores OS internals, Linux system administration, scripting, and kernel-level concepts like scheduling and memory management.
+**Description:** This course introduces the basic mechanisms of an operating system and its management among various components, laying a foundation for advanced system administration, virtualization, and security. By the end of the course, learners will be able to perform automated user and permissions management in a computing system, analyse and manage process, memory, storage, and network management modules, and evaluate the design and process models of contemporary operating systems. Topics include OS concepts, OS design, Linux shell commands, kernel customization, process/thread management, services and daemons, bash scripting, system administration tasks, file systems, and networking with Linux systems.
 
 **Course Title:** Operations Engineering 1
 **SMS Code:** ID609001 / IA609001
@@ -183,62 +183,66 @@
 **Workplace Learning:** 0
 **Self-Directed Learning:** 90
 **Total Learning:** 150
-**Description:** Develops advanced system administration skills including scripting, backups, cloud deployment, and directory services.
+**Description:** This course provides learners with knowledge and hands-on skills to perform system administration tasks securely across different computing platforms using the command line interface. By the end of the course, learners will be able to identify key tools and services for administering computing systems, develop advanced shell scripts to automate administration tasks, and use cloud and directory services for enterprise infrastructure. Topics include network and firewall configuration, advanced user/group management, advanced scripting, ticketing, backup and disaster recovery, directory services, cloud services deployment, OS and network hardening, and containers.
 
-Course Title: Embedded Systems
-SMS Code: ID620001 / IA620001
-Level: 6
-Credits: 15
-Prerequisites: IN520002
-Directed Learning: 60
-Workplace Learning: 0
-Self-Directed Learning: 90
-Total Learning: 150
-Description: Introduces fundamental concepts of computer architecture and embedded systems. Students design and implement embedded hardware/software solutions without delving into low-level CPU or assembly programming.
+Here’s the extracted data for the courses in your fifth PDF, formatted with Aim, Learning Outcomes, and Indicative Content merged into the Description:
 
-Course Title: Automation and Robotics
-SMS Code: ID621001 / IA621001
-Level: 6
-Credits: 15
-Prerequisites: ID620001
-Directed Learning: 60
-Workplace Learning: 0
-Self-Directed Learning: 90
-Total Learning: 150
-Description: Expands on embedded systems to develop interactive robotic and automated systems. Covers sensors, mechanical principles, interaction design, and hands-on project work using development platforms.
+---
 
-Course Title: Introductory Game Development
-SMS Code: ID623001
-Level: 6
-Credits: 15
-Prerequisites: IN/ID511001 (Programming 2)
-Directed Learning: 48
-Workplace Learning: 0
-Self-Directed Learning: 102
-Total Learning: 150
-Description: Introduces game development using Unity and Visual Studio Code. Covers basic game mechanics, scripting, AI, and algorithms through a portfolio-based assessment.
+**Course Title:** Embedded Systems
+**SMS Code:** ID620001 / IA620001
+**Level:** 6
+**Credits:** 15
+**Prerequisites:** IN520002
+**Directed Learning:** 60
+**Workplace Learning:** 0
+**Self-Directed Learning:** 90
+**Total Learning:** 150
+**Description:** This course introduces the core principles of computer hardware and architecture and acquaints learners with a range of embedded application contexts. It is not intended to teach CPU design or assembler programming. By the end of the course, learners will be able to analyse the parameters of a problem domain that can be solved with an embedded systems solution and implement a complete embedded systems solution to meet requirements. Topics include low-level hardware, instruction processing, CPU design principles, high-level architecture, embedded application areas, theory and principles of control systems, embedded system hardware and software, and project work.
 
-Course Title: Year Two Special Topic
-SMS Code: ID630151 / IA630151
-Level: 6
-Credits: 15
-Prerequisites: 120 credits at Level 5
-Directed Learning: 30
-Workplace Learning: 0
-Self-Directed Learning: 120
-Total Learning: 150
-Description: A self-directed research and development project on a specialized IT topic. Students work closely with a supervisor to create a tailored study plan and deliver a comprehensive project.
+**Course Title:** Automation and Robotics
+**SMS Code:** ID621001 / IA621001
+**Level:** 6
+**Credits:** 15
+**Prerequisites:** ID620001
+**Directed Learning:** 60
+**Workplace Learning:** 0
+**Self-Directed Learning:** 90
+**Total Learning:** 150
+**Description:** This course extends and refines micro-electronics skills to build physically and behaviourally complex, highly interactive artefacts. By the end of the course, learners will be able to apply core electronic and mechanical principles to robotics/automated systems design, design solutions following interaction design principles, and use appropriate development platforms to implement simple interactive robotics/automated systems. Topics include historical development of automated systems, application areas, robotics simulation, sensors, hardware for robotics/automated systems, development software, interaction design principles, and project-based design and construction.
 
-Course Title: Studio 5
-SMS Code: ID728001 / IA728001
-Level: 7
-Credits: 15
-Prerequisites: ID622001
-Directed Learning: 15
-Workplace Learning: 0
-Self-Directed Learning: 135
-Total Learning: 150
-Description: Involves the execution of large-scale, real-world IT projects in teams. Emphasizes problem-solving, professional collaboration, and technical skills in complex and unfamiliar contexts.
+**Course Title:** Introductory Game Development
+**SMS Code:** ID623001
+**Level:** 6
+**Credits:** 15
+**Prerequisites:** IN/ID511001: Programming 2
+**Directed Learning:** 48
+**Workplace Learning:** 0
+**Self-Directed Learning:** 102
+**Total Learning:** 150
+**Description:** This course introduces the concepts of game development, including algorithms and data structures required to use a simple, industry-relevant framework. By the end of the course, learners will be able to design and build usable games using various introductory algorithms, following an appropriate software development methodology. Topics include Unity scripting, game mechanics, maze generation, and AI strategy.
+
+**Course Title:** Year Two Special Topic
+**SMS Code:** ID630151 / IA630151
+**Level:** 6
+**Credits:** 15
+**Prerequisites:** 120 credits at Level 5
+**Directed Learning:** 30
+**Workplace Learning:** 0
+**Self-Directed Learning:** 120
+**Total Learning:** 150
+**Description:** This course allows learners to carry out semi-independent exploration of a specific IT topic not covered by existing courses. Learners will negotiate objectives, a learning plan, assessment criteria, and time frames with a supervising lecturer. By the end of the course, learners will be able to examine and discuss a specific topic while applying underlying principles and concepts to the field of study. Content includes independent research using academic journals, textbooks, and credible online resources, with theoretical material and applied skills development supported by a staff supervisor.
+
+**Course Title:** Studio 5
+**SMS Code:** ID728001 / IA728001
+**Level:** 7
+**Credits:** 15
+**Prerequisites:** ID622001
+**Directed Learning:** 15
+**Workplace Learning:** 0
+**Self-Directed Learning:** 135
+**Total Learning:** 150
+**Description:** This course enables learners to apply technical skills within complex IT projects and extend professional behaviour through group work, professional development activities, and external engagement. By the end of the course, learners will be able to analyse real-world problems to create IT systems, apply technical and theoretical skills to complex situations, and contribute as part of a structured development team. Learners complete large, real client-driven projects under supervision.
 
 **Course Title:** Studio 6
 **SMS Code:** ID732001
@@ -249,7 +253,7 @@ Description: Involves the execution of large-scale, real-world IT projects in te
 **Workplace Learning:** 0
 **Self-Directed Learning:** 135
 **Total Learning:** 150
-**Description:** Final studio course involving advanced real-client project work. Learners tackle complex IT problems, specialize in technical domains, and demonstrate leadership and ownership of development processes.
+**Description:** This course enables learners to extend their skills within a complex IT project. By the end of the course, learners will be able to critically evaluate and apply processes to unfamiliar and complex problems, engage in advanced study in specialist areas, and demonstrate leadership within a project group. Learners complete the development of large, real client-driven projects under supervision.
 
 **Course Title:** Developing Flexible IT Courses
 **SMS Code:** ID703001
@@ -260,7 +264,7 @@ Description: Involves the execution of large-scale, real-world IT projects in te
 **Workplace Learning:** nil
 **Self-Directed Learning:** 90
 **Total Learning:** 150
-**Description:** Prepares learners for IT training roles by teaching them to design, deliver, and evaluate computer-based tutorials and blended learning programmes, including Treaty of Waitangi considerations.
+**Description:** This course prepares learners for the training role often undertaken by IT professionals. By the end of the course, learners will be able to design, create, implement, and evaluate a computer-based tutorial to teach technical skills or knowledge to a specified audience, and design, conduct, and evaluate a blended IT training programme, including Treaty of Waitangi considerations. Topics include evaluating training materials, screen recording software, interactive quizzes, tutorial writing, learning tools, learning styles, training needs analysis, training methods, conducting sessions, evaluation, computer-based training, and interactive facilitation.
 
 **Course Title:** Quality Assurance and Software Testing
 **SMS Code:** ID733001
@@ -271,7 +275,7 @@ Description: Involves the execution of large-scale, real-world IT projects in te
 **Workplace Learning:** nil
 **Self-Directed Learning:** 90
 **Total Learning:** 150
-**Description:** Introduces software testing theory and practice, including test planning, automation (e.g. Selenium), defect detection, and critical analysis of testing’s role in software development.
+**Description:** This course lays the foundation for a career in software testing, focusing on principles, processes, and practical skills to produce robust code. By the end of the course, learners will be able to plan, execute, and document testing using automated and manual methods, and analyse industry-standard software testing theory. Topics include static and dynamic testing, software testing theory (including ISTQB Foundation Level), automation tools (Selenium, WinAppDriver, Appium), producing test plans, detecting and reporting errors effectively, and exploring the ethical and social implications of major software failures.
 
 **Course Title:** Databases 3
 **SMS Code:** ID705001 / IA705001
@@ -282,7 +286,7 @@ Description: Involves the execution of large-scale, real-world IT projects in te
 **Workplace Learning:** 0
 **Self-Directed Learning:** 90
 **Total Learning:** 150
-**Description:** Advanced course covering enterprise database design, performance optimization, data security, and administration. Includes hands-on work with complex queries, stored procedures, and real-world DBA tasks.
+**Description:** This course develops skills to design, implement, and administer enterprise databases, and to explore tools, platforms, and current research in database management. By the end of the course, learners will be able to troubleshoot complex performance issues, design and develop relational databases under high-availability, high-reliability, security, and performance constraints, and analyse database administrator tasks. Topics include application areas, information analysis, advanced data modelling, stored procedures, complex queries, transactions and concurrency, data security, and data mining.
 
 **Course Title:** Security
 **SMS Code:** ID724001 / IA724001
@@ -293,7 +297,11 @@ Description: Involves the execution of large-scale, real-world IT projects in te
 **Workplace Learning:** nil
 **Self-Directed Learning:** 90
 **Total Learning:** 150
-**Description:** Teaches foundational and practical information security concepts, including cryptography, vulnerability assessment, system hardening, and forensics using a "learn by attacking, defend by fixing" model.
+**Description:** This course provides theoretical knowledge and technical skills in information security, guiding learners through identifying and analysing security threats, then mitigating them with robust solutions. By the end of the course, learners will be able to apply security best practices to mitigate vulnerabilities and implement cryptographic solutions for modern systems. Topics include information security mechanisms, cryptography, network security, web application security, server hardening, and computer forensics.
+
+Here’s the extracted data for the final PDF you provided, with Aim, Learning Outcomes, and Indicative Content merged into the Description field:
+
+---
 
 **Course Title:** Advanced Application Development Concepts
 **SMS Code:** ID730001
@@ -304,7 +312,7 @@ Description: Involves the execution of large-scale, real-world IT projects in te
 **Workplace Learning:** 0
 **Self-Directed Learning:** 90
 **Total Learning:** 150
-**Description:**Covers the development of efficient and scalable full-stack applications using advanced programming techniques such as code optimization, caching, and use of modern frameworks and deployment methods like WebSockets and CDNs.
+**Description:** This course enables learners to build and deploy optimised and efficient applications using a range of advanced industry tools and frameworks. By the end of the course, learners will be able to critically evaluate and implement a range of programming paradigms to solve unfamiliar problems, and create efficient full-stack applications using advanced industry techniques. Topics include progressive web applications, database replication, advanced design patterns, code optimisation (tree shaking, code splitting, dynamic loading), code minimisation, compression, benchmarking, CDNs, caching, message queues, and WebSockets.
 
 **Course Title:** Advanced Algorithms
 **SMS Code:** ID711002
@@ -315,7 +323,7 @@ Description: Involves the execution of large-scale, real-world IT projects in te
 **Workplace Learning:** 0
 **Self-Directed Learning:** 90
 **Total Learning:** 150
-**Description:**Explores complex algorithmic strategies including genetic algorithms, signal processing, NLP, and optimization. Emphasizes solving nontrivial problems with performance-focused and resource-aware implementations.
+**Description:** This course enables learners to use a wide variety of advanced algorithms and tools to develop efficient solutions to complex computational problems. By the end of the course, learners will be able to evaluate algorithmic tools for efficient software, implement appropriate algorithms and data structures for nontrivial problems, and optimise computational resource usage. Topics include genetic algorithms, computer graphics, modelling and simulation, NLP, optimisation, data analytics, measuring algorithm efficiency, industrial control, signal processing, blockchain, searching, sorting, hashing, learning algorithms, and security.
 
 **Course Title:** Mobile Application Development
 **SMS Code:** ID721001 / IA721001
@@ -326,7 +334,7 @@ Description: Involves the execution of large-scale, real-world IT projects in te
 **Workplace Learning:** 0
 **Self-Directed Learning:** 90
 **Total Learning:** 150
-**Description:**Teaches mobile app design and development using industry standards. Learners build and publish applications, focusing on UX, native vs web app trade-offs, SDKs, and publishing processes.
+**Description:** This course covers the design and development of mobile applications, enabling learners to publish them to mainstream app stores. By the end of the course, learners will be able to implement and publish complete, non-trivial, industry-standard mobile applications following sound architectural and code-quality standards, identify relevant use cases, and follow software engineering practices in design. Topics include mobile interaction/interface design, native vs. web-based apps, user-centred design/testing, hardware constraints, SDKs, APIs, software architectures for mobile, and publishing procedures.
 
 **Course Title:** Artificial Intelligence and Data Science
 **SMS Code:** ID727001
@@ -337,7 +345,7 @@ Description: Involves the execution of large-scale, real-world IT projects in te
 **Workplace Learning:** 0
 **Self-Directed Learning:** 90
 **Total Learning:** 150
-**Description:**Introduces AI and data science concepts including neural networks, natural language processing, web scraping, transfer learning, ethics in AI, and use of machine learning models for solving real-world problems.
+**Description:** This course enables learners to choose and deploy appropriate machine intelligence tools to solve problems requiring a cognitive component. Applications include computer vision, NLP, recommendation systems, data analytics, anomaly detection, chatbots, machine translation, autonomous navigation, and robotic control. By the end of the course, learners will be able to analyse the principles, advantages, limitations, applications, and implications of AI; choose, implement, and evaluate machine learning models; and apply data science techniques for complex data. Topics include neural networks (CNNs, LSTMs, GRUs), web scraping, transfer learning, language models, generative models, reinforcement learning, GPU computation, ethics in AI, learning theory, and AI APIs.
 
 **Course Title:** Operations Engineering 2
 **SMS Code:** ID734001
@@ -348,7 +356,7 @@ Description: Involves the execution of large-scale, real-world IT projects in te
 **Workplace Learning:** nil
 **Self-Directed Learning:** 90
 **Total Learning:** 150
-**Description:**Builds advanced system administration skills within enterprise environments. Covers disaster recovery planning, ethical responsibilities, configuration management tools, and deploying monitoring and backup solutions.
+**Description:** This course enables learners to configure, manage, and troubleshoot systems within an enterprise network, covering both application and operating system components. By the end of the course, learners will be able to implement advanced system operations and administration tasks, formulate disaster recovery and mitigation policies, discuss ethics and social responsibility in system administration, and use configuration management schemes. Topics include package building/distribution, server management, performance tuning, network monitoring, configuration management, backup systems, disaster recovery, and best practices for system administration.
 
 **Course Title:** UX Engineering
 **SMS Code:** ID729002
@@ -359,7 +367,7 @@ Description: Involves the execution of large-scale, real-world IT projects in te
 **Workplace Learning:** nil
 **Self-Directed Learning:** 90
 **Total Learning:** 150
-**Description:**Focuses on advanced frontend development and UX design. Combines technical skills with design thinking, inclusive design principles, user testing, and sustainability to create high-quality user interfaces.
+**Description:** This course builds on front-end development skills to design and build inclusive, flexible, and high-quality user experiences. By the end of the course, learners will be able to use advanced front-end technologies and workflows for efficient development, and design solutions to complex UX problems. Topics include design thinking, usability principles, UXD research, user requirements (including accessibility), user and design testing, advanced CSS, preprocessors, and semantic, inclusive markup.
 
 **Course Title:** Administering a Virtual Infrastructure
 **SMS Code:** ID720001 / IA720001
@@ -370,7 +378,7 @@ Description: Involves the execution of large-scale, real-world IT projects in te
 **Workplace Learning:** nil
 **Self-Directed Learning:** 90
 **Total Learning:** 150
-**Description:**Equips learners with practical skills in planning, deploying, and managing enterprise-grade virtual environments. Emphasizes virtualization performance tuning, storage/network setup, and cloud VM deployment.
+**Description:** This course provides in-depth knowledge and techniques for implementing, optimising, and troubleshooting virtual infrastructures. By the end of the course, learners will be able to plan, install, and configure virtual infrastructures, deploy virtual machines and applications in cloud platforms, monitor and troubleshoot service levels, and analyse performance factors. Topics include installing/configuring virtual environments, SAN planning, performance bottleneck analysis (CPU, network, memory, application), and troubleshooting hypervisors.
 
 **Course Title:** Advanced Networking
 **SMS Code:** ID723001
@@ -381,7 +389,7 @@ Description: Involves the execution of large-scale, real-world IT projects in te
 **Workplace Learning:** nil
 **Self-Directed Learning:** 90
 **Total Learning:** 150
-**Description:**Teaches the design and implementation of high-performance, scalable, and secure networks using advanced protocols and technologies such as BGP, MPLS, VRF, SDN, and QoS. Emphasizes real-world fault tolerance and performance evaluation.
+**Description:** This course provides learners with an understanding of advanced networking protocols, services, and concepts for medium to large-scale networks. By the end of the course, learners will be able to design and implement scalable, fault-tolerant solutions, develop policies for network security and performance, and evaluate new technologies to enhance network flexibility. Topics include BGP, STP, link aggregation, HSRP, GLBP, OSPF, VRF, MPLS VPNs, SDN, and QoS.
 
 **Course Title:** Enterprise Networking, Security and Automation
 **SMS Code:** ID735001
@@ -392,7 +400,7 @@ Description: Involves the execution of large-scale, real-world IT projects in te
 **Workplace Learning:** nil
 **Self-Directed Learning:** 90
 **Total Learning:** 150
-**Description:**Prepares learners to design and manage secure enterprise networks. Covers advanced routing, ACLs, NAT, virtualization, SDN, and automation using tools and curriculum from the Cisco Network Academy.
+**Description:** This course enables learners to design, secure, operate, and troubleshoot enterprise-scale networks. By the end of the course, learners will be able to implement scalable and secure network solutions, deploy management and monitoring services for network integrity, and evaluate the impact of virtualisation, automation, and controller-based architectures. Topics include network design, QoS, ACLs, NAT, advanced routing protocols, network virtualisation, automation, management, and SDN.
 
 **Course Title:** Internet of Things and Cloud Computing
 **SMS Code:** ID736001 / IA736001
@@ -403,7 +411,7 @@ Description: Involves the execution of large-scale, real-world IT projects in te
 **Workplace Learning:** 0
 **Self-Directed Learning:** 90
 **Total Learning:** 150
-**Description:**Explores IoT system design and cloud integration. Learners analyze architectures, standards, and use cases, then design and develop cloud-based IoT solutions using modern platforms, DevOps tools, and security best practices.
+**Description:** This course enables learners to investigate IoT solutions for real-world problems and develop IoT applications involving cloud computing. By the end of the course, learners will be able to analyse cloud-based infrastructure models, evaluate IoT systems architecture and applications, and design IoT solutions deployed to the cloud. Topics include IoT applications and use cases, system architecture, IoT cloud platforms, interoperability, IoT networks, cloud computing models (IaaS, PaaS, SaaS), DevOps, and IoT security.
 
 **Course Title:** Advanced Game Development
 **SMS Code:** ID737001 / IA737001
@@ -414,7 +422,7 @@ Description: Involves the execution of large-scale, real-world IT projects in te
 **Workplace Learning:** 0
 **Self-Directed Learning:** 90
 **Total Learning:** 150
-**Description:**Covers advanced game development techniques using Unity and C#. Topics include AR/VR, game graphics and audio, and real-time programming for interactive experiences, culminating in a fully developed game demo project.
+**Description:** This course enables learners to apply game programming techniques and tools to develop effective games. By the end of the course, learners will be able to design and develop a game using industry-standard tools, technologies, and practices. Topics include game graphics and audio, graphical game programming, Unity3D development, C# scripting, AR and VR concepts, Google VR, ARCore, and game APIs.
 
 **Course Title:** Business Analysis and Intelligence
 **SMS Code:** ID738001 / IA738001
@@ -425,18 +433,18 @@ Description: Involves the execution of large-scale, real-world IT projects in te
 **Workplace Learning:** 0
 **Self-Directed Learning:** 90
 **Total Learning:** 150
-**Description:**Equips learners with skills in business analysis, data analytics, and the application of AI to solve organizational problems. Includes tools like Power BI, R, and Tableau for decision-making and innovation.
+**Description:** This course enables learners to apply theories, methods, and tools for analysing business processes and proposing solutions to organisational problems. By the end of the course, learners will be able to apply business analysis methods, use AI for business intelligence, and apply data analytics processes to propose recommendations. Topics include business analysis concepts, tools and techniques, business analyst competencies, machine learning for business, data-driven innovation, business improvements, data analytics, and forecasting.
 
 **Course Title:** Year Three Special Topic
 **SMS Code:** ID730151 / IA730151
 **Level:** 7
 **Credits:** 15
-**Prerequisites:** 120 L5 credits, 90 L6 credits
+**Prerequisites:** 120 Level 5 credits, 90 Level 6 credits
 **Directed Learning:** 15
 **Workplace Learning:** 0
 **Self-Directed Learning:** 135
 **Total Learning:** 150
-**Description:**Independent research course allowing deep investigation into a specialized IT topic not covered by existing papers. Requires a negotiated study plan and supervision, ideal for self-directed and academically strong learners.
+**Description:** This course allows learners to conduct independent exploration of a specific IT topic not supported by existing papers. By the end of the course, learners will be able to critically analyse the topic while applying relevant principles and concepts. Work involves research using academic and credible sources, combining theoretical and applied skills development.
 
 **Course Title:** Unspecified Credits – Level 5
 **SMS Code:** ID550001 / IA550001
@@ -447,7 +455,7 @@ Description: Involves the execution of large-scale, real-world IT projects in te
 **Workplace Learning:** 0
 **Self-Directed Learning:** 0
 **Total Learning:** 0
-**Description:**Used to record externally completed courses at Level 5 that do not overlap with existing BIT papers. Eligible courses must contribute to a degree and align in credit weight. No fees apply.
+**Description:** This paper acts as a repository for “unspecified credits” where learners undertake courses from outside the Bachelor of Information Technology. Up to 15 credits may normally be used. Any course recognised as contributing to a degree may be used, with credit calculated based on EFTS contribution (0.125 EFTS = 15 credits). No fee is charged. Outcomes and content are determined by the external paper and must not significantly overlap with other papers undertaken by the learner.
 
 **Course Title:** Unspecified Credits – Level 6
 **SMS Code:** ID650001 / IA650001
@@ -458,7 +466,7 @@ Description: Involves the execution of large-scale, real-world IT projects in te
 **Workplace Learning:** 0
 **Self-Directed Learning:** 0
 **Total Learning:** 0
-**Description:**Acts as a placeholder for approved external Level 6 courses contributing to the BIT degree. Credits must be unique and not overlap with internal coursework. No formal delivery or assessment by BIT required.
+**Description:** This paper acts as a repository for “unspecified credits” where learners undertake courses from outside the Bachelor of Information Technology. Up to 15 credits may normally be used. Any course recognised as contributing to a degree may be used, with credit calculated based on EFTS contribution (0.125 EFTS = 15 credits). No fee is charged. Outcomes and content are determined by the external paper and must not significantly overlap with other papers undertaken by the learner.
 
 **Course Title:** Unspecified Credits – Level 7
 **SMS Code:** ID750001 / IA750001
@@ -469,7 +477,7 @@ Description: Involves the execution of large-scale, real-world IT projects in te
 **Workplace Learning:** 0
 **Self-Directed Learning:** 0
 **Total Learning:** 0
-**Description:**Provides recognition for approved Level 7 study completed outside the BIT program. Used when external courses align with program outcomes but are not covered by internal offerings. No cost incurred.
+**Description:** This paper acts as a repository for “unspecified credits” where learners undertake courses from outside the Bachelor of Information Technology. Up to 15 credits may normally be used. Any course recognised as contributing to a degree may be used, with credit calculated based on EFTS contribution (0.125 EFTS = 15 credits). No fee is charged. Outcomes and content are determined by the external paper and must not significantly overlap with other papers undertaken by the learner.
 
 
 
