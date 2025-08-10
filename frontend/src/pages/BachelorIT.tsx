@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import SearchBar from "../components/SearchBar";
 
 interface Course {
   id: number;
@@ -42,6 +43,9 @@ const CourseList: React.FC = () => {
       <h1 className="text-4xl font-extrabold text-blue-700 text-center mb-10 drop-shadow-sm">
         Bachelor of Information Technology Courses
       </h1>
+      <div className="max-w-2xl mx-auto mb-5">
+        <SearchBar />
+      </div>
       <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
         {courses.map((course) => (
           <div
