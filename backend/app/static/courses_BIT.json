@@ -181,5 +181,66 @@
     "program": "Bachelor of Information Technology",
     "description": "This course provides an understanding of the fundamentals of database management systems, with emphasis on relational systems. By the end of the course, learners will be able to plan and build a normalised relational database to solve a specified problem, and use syntactically correct SQL to write database queries that ensure data integrity. Topics include the role of relational databases and relational database management systems, relational algebra, functional dependencies, normalisation, RDBMS architecture, query construction and optimisation, data modelling, design and implementation of relational databases, and principles of database administration and security."
   },
+  {
+    "course_title": "Introductory Application Development Concepts",
+    "sms_code": "ID607001 / IA607001",
+    "year": 2,
+    "credits": 15,
+    "prerequisites": [
+      "IN511001"
+    ],
+    "directed_learning_hours": 60,
+    "workplace_learning_hours": 0,
+    "self_directed_learning_hours": 90,
+    "total_learning_hours": 150,
+    "program": "Bachelor of Information Technology",
+    "description": "This course introduces the concepts of application development, including algorithms, data structures, and design patterns required to use a simple, industry-relevant development framework. By the end of the course, learners will be able to design and build secure applications with dynamic database functionality following an appropriate software development methodology. Topics include server and client-side programming, design patterns such as MVC, database integration (ORMs), database migration, automated testing, and session-based authentication."
+  },
+  {
+    "course_title": "Intermediate Application Development Concepts",
+    "sms_code": "ID608001 / IA608001",
+    "year": 2,
+    "credits": 15,
+    "prerequisites": [
+      "ID607001"
+    ],
+    "directed_learning_hours": 60,
+    "workplace_learning_hours": 0,
+    "self_directed_learning_hours": 90,
+    "total_learning_hours": 150,
+    "program": "Bachelor of Information Technology",
+    "description": "This course extends the concepts of application development, including algorithms, data structures, and design patterns, required to use complex, industry-relevant frameworks or libraries. By the end of the course, learners will be able to apply design patterns and programming principles using software development best practices, and design and implement full-stack applications using industry-relevant programming languages. Topics include APIs, database integration, deployment, design patterns, frameworks or libraries, ORMs, session-based authentication, automated testing, security, and parallelism."
+  },
+  {
+    "course_title": "Switching, Routing and Wireless Essentials",
+    "sms_code": "ID615008 / IA615008",
+    "year": 2,
+    "credits": 15,
+    "prerequisites": [
+      "IN515001"
+    ],
+    "directed_learning_hours": 60,
+    "workplace_learning_hours": 0,
+    "self_directed_learning_hours": 90,
+    "total_learning_hours": 150,
+    "program": "Bachelor of Information Technology",
+    "description": "This course enables learners to apply knowledge of router and switch operation, network architecture, and services to configure small-to-medium business networks. By the end of the course, learners will be able to design and build a network for availability and redundancy, and configure and troubleshoot flexible local area networks using virtual and wireless technologies. Topics include basic and enhanced switching concepts, VLANs, VTP, RSTP, PVSTP, 802.1q, router operations, static and dynamic routing, ACLs, DHCP, wireless LAN concepts, and LAN security."
+  },
+  {
+    "course_title": "Operating Systems Concepts",
+    "sms_code": "ID616001 / IA616001",
+    "year": 2,
+    "credits": 15,
+    "prerequisites": [
+      "IN510001",
+      "IN520002"
+    ],
+    "directed_learning_hours": 60,
+    "workplace_learning_hours": 0,
+    "self_directed_learning_hours": 90,
+    "total_learning_hours": 150,
+    "program": "Bachelor of Information Technology",
+    "description": "This course introduces the basic mechanisms of an operating system and its management among various components, laying a foundation for advanced system administration, virtualization, and security. By the end of the course, learners will be able to perform automated user and permissions management in a computing system, analyse and manage process, memory, storage, and network management modules, and evaluate the design and process models of contemporary operating systems. Topics include OS concepts, OS design, Linux shell commands, kernel customization, process/thread management, services and daemons, bash scripting, system administration tasks, file systems, and networking with Linux systems."
+  },
   ]
 }
