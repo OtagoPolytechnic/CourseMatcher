@@ -362,6 +362,65 @@
     "program": "Bachelor of Information Technology",
     "description": "This course prepares learners for the training role often undertaken by IT professionals. By the end of the course, learners will be able to design, create, implement, and evaluate a computer-based tutorial to teach technical skills or knowledge to a specified audience, and design, conduct, and evaluate a blended IT training programme, including Treaty of Waitangi considerations. Topics include evaluating training materials, screen recording software, interactive quizzes, tutorial writing, learning tools, learning styles, training needs analysis, training methods, conducting sessions, evaluation, computer-based training, and interactive facilitation."
   },
-  
+  {
+    "course_title": "Quality Assurance and Software Testing",
+    "sms_code": "ID733001",
+    "year": 3,
+    "credits": 15,
+    "prerequisites": [
+      "None"
+    ],
+    "directed_learning_hours": 60,
+    "workplace_learning_hours": 0,
+    "self_directed_learning_hours": 90,
+    "total_learning_hours": 150,
+    "program": "Bachelor of Information Technology",
+    "description": "This course lays the foundation for a career in software testing, focusing on principles, processes, and practical skills to produce robust code. By the end of the course, learners will be able to plan, execute, and document testing using automated and manual methods, and analyse industry-standard software testing theory. Topics include static and dynamic testing, software testing theory (including ISTQB Foundation Level), automation tools (Selenium, WinAppDriver, Appium), producing test plans, detecting and reporting errors effectively, and exploring the ethical and social implications of major software failures."
+  },
+  {
+    "course_title": "Databases 3",
+    "sms_code": "ID705001 / IA705001",
+    "year": 3,
+    "credits": 15,
+    "prerequisites": [
+      "ID605001"
+    ],
+    "directed_learning_hours": 60,
+    "workplace_learning_hours": 0,
+    "self_directed_learning_hours": 90,
+    "total_learning_hours": 150,
+    "program": "Bachelor of Information Technology",
+    "description": "This course develops skills to design, implement, and administer enterprise databases, and to explore tools, platforms, and current research in database management. By the end of the course, learners will be able to troubleshoot complex performance issues, design and develop relational databases under high-availability, high-reliability, security, and performance constraints, and analyse database administrator tasks. Topics include application areas, information analysis, advanced data modelling, stored procedures, complex queries, transactions and concurrency, data security, and data mining."
+  },
+  {
+    "course_title": "Security",
+    "sms_code": "ID724001 / IA724001",
+    "year": 3,
+    "credits": 15,
+    "prerequisites": [
+      "ID616001"
+    ],
+    "directed_learning_hours": 60,
+    "workplace_learning_hours": 0,
+    "self_directed_learning_hours": 90,
+    "total_learning_hours": 150,
+    "program": "Bachelor of Information Technology",
+    "description": "This course provides theoretical knowledge and technical skills in information security, guiding learners through identifying and analysing security threats, then mitigating them with robust solutions. By the end of the course, learners will be able to apply security best practices to mitigate vulnerabilities and implement cryptographic solutions for modern systems. Topics include information security mechanisms, cryptography, network security, web application security, server hardening, and computer forensics."
+  },
+  {
+    "course_title": "Advanced Application Development Concepts",
+    "sms_code": "ID730001",
+    "year": 3,
+    "credits": 15,
+    "prerequisites": [
+      "ID608001"
+    ],
+    "directed_learning_hours": 60,
+    "workplace_learning_hours": 0,
+    "self_directed_learning_hours": 90,
+    "total_learning_hours": 150,
+    "program": "Bachelor of Information Technology",
+    "description": "This course enables learners to build and deploy optimised and efficient applications using a range of advanced industry tools and frameworks. By the end of the course, learners will be able to critically evaluate and implement a range of programming paradigms to solve unfamiliar problems, and create efficient full-stack applications using advanced industry techniques. Topics include progressive web applications, database replication, advanced design patterns, code optimisation (tree shaking, code splitting, dynamic loading), code minimisation, compression, benchmarking, CDNs, caching, message queues, and WebSockets."
+  },
   ]
 }
