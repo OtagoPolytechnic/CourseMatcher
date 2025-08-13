@@ -1,0 +1,60 @@
+{
+  "courses": [
+    {
+      "course_title": "Studio 1",
+      "sms_code": "ID502001 / IA502001",
+      "year": 1,
+      "credits": 15,
+      "prerequisites": [
+        "None"
+      ],
+      "directed_learning_hours": 60,
+      "workplace_learning_hours": 0,
+      "self_directed_learning_hours": 90,
+      "total_learning_hours": 150,
+      "description": "This course introduces learners to the fundamentals of professionalism in a technical environment. By the end of the course, learners will be able to communicate appropriately in informal and semi-formal written and verbal contexts; discern functional and non-functional aspects within a problem domain in the context of data modelling; and use collaboration tools and workflows to contribute to a simple group project. Topics include problem domains, design thinking, introduction to databases, time management, report writing, oral presentations, version control (GitHub), and object-oriented concepts."
+    },
+    {
+      "course_title": "Studio 2",
+      "sms_code": "ID503001 / IA503001",
+      "year": 1,
+      "credits": 15,
+      "prerequisites": [
+        "ID502001 / IA502001"
+      ],
+      "directed_learning_hours": 60,
+      "workplace_learning_hours": 0,
+      "self_directed_learning_hours": 90,
+      "total_learning_hours": 150,
+      "description": "This course introduces learners to user-centric and technical project planning techniques to create solutions to simple IT problems. By the end of the course, learners will be able to employ sound communication to elicit user requirements to inform the planning process, and work as a member of a team to produce a simple technical output. Topics include basic iterative development, UML, basic project management skills and tools, design thinking, stand-up meetings, client interviews, and an introduction to user stories."
+    },
+    {
+      "course_title": "Programming 1",
+      "sms_code": "ID510001 / IA510001",
+      "year": 1,
+      "credits": 15,
+      "prerequisites": [
+        "None"
+      ],
+      "directed_learning_hours": 60,
+      "workplace_learning_hours": 0,
+      "self_directed_learning_hours": 90,
+      "total_learning_hours": 150,
+      "description": "This course introduces learners to the concepts of program design and programming fundamentals. By the end of the course, learners will be able to create programs using basic programming constructs and simple data structures to solve specified problems, and apply a logic depiction method to decompose appropriate simple problems. Topics include program design, algorithms, structured diagrams (UML), if statements, nested ifs, switch statements, loops, arrays, data types and records, reading files of records, text files, and version control."
+    },
+    {
+      "course_title": "Programming 2",
+      "sms_code": "ID511001 / IA511001",
+      "year": 1,
+      "credits": 15,
+      "prerequisites": [
+        "ID510001"
+      ],
+      "directed_learning_hours": 60,
+      "workplace_learning_hours": 0,
+      "self_directed_learning_hours": 90,
+      "total_learning_hours": 150,
+      "description": "This course enables learners to build simple object-oriented (OO) applications and identify situations most appropriate for OO implementation. By the end of the course, learners will be able to build interactive, event-driven GUI applications using pre-built components, and declare and implement user-defined classes using encapsulation, inheritance, and polymorphism. Topics include problem analysis and decomposition, principles of good class design, logic of basic algorithms, use of core complex data structures, and good programming practices that are independent of the language or model used."
+    }
+  ]
+}
