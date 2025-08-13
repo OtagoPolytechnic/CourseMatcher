@@ -12,6 +12,7 @@
       "workplace_learning_hours": 0,
       "self_directed_learning_hours": 90,
       "total_learning_hours": 150,
+      "program": "Bachelor of Information Technology",
       "description": "This course introduces learners to the fundamentals of professionalism in a technical environment. By the end of the course, learners will be able to communicate appropriately in informal and semi-formal written and verbal contexts; discern functional and non-functional aspects within a problem domain in the context of data modelling; and use collaboration tools and workflows to contribute to a simple group project. Topics include problem domains, design thinking, introduction to databases, time management, report writing, oral presentations, version control (GitHub), and object-oriented concepts."
     },
     {
@@ -26,6 +27,7 @@
       "workplace_learning_hours": 0,
       "self_directed_learning_hours": 90,
       "total_learning_hours": 150,
+      "program": "Bachelor of Information Technology",
       "description": "This course introduces learners to user-centric and technical project planning techniques to create solutions to simple IT problems. By the end of the course, learners will be able to employ sound communication to elicit user requirements to inform the planning process, and work as a member of a team to produce a simple technical output. Topics include basic iterative development, UML, basic project management skills and tools, design thinking, stand-up meetings, client interviews, and an introduction to user stories."
     },
     {
@@ -40,6 +42,7 @@
       "workplace_learning_hours": 0,
       "self_directed_learning_hours": 90,
       "total_learning_hours": 150,
+      "program": "Bachelor of Information Technology",
       "description": "This course introduces learners to the concepts of program design and programming fundamentals. By the end of the course, learners will be able to create programs using basic programming constructs and simple data structures to solve specified problems, and apply a logic depiction method to decompose appropriate simple problems. Topics include program design, algorithms, structured diagrams (UML), if statements, nested ifs, switch statements, loops, arrays, data types and records, reading files of records, text files, and version control."
     },
     {
@@ -54,7 +57,68 @@
       "workplace_learning_hours": 0,
       "self_directed_learning_hours": 90,
       "total_learning_hours": 150,
+      "program": "Bachelor of Information Technology",
       "description": "This course enables learners to build simple object-oriented (OO) applications and identify situations most appropriate for OO implementation. By the end of the course, learners will be able to build interactive, event-driven GUI applications using pre-built components, and declare and implement user-defined classes using encapsulation, inheritance, and polymorphism. Topics include problem analysis and decomposition, principles of good class design, logic of basic algorithms, use of core complex data structures, and good programming practices that are independent of the language or model used."
-    }
+    },
+    {
+    "course_title": "Fundamentals of Web Development",
+    "sms_code": "ID512002 / IA512002",
+    "year": 1,
+    "credits": 15,
+    "prerequisites": [
+      "ID510001"
+    ],
+    "directed_learning_hours": 60,
+    "workplace_learning_hours": 0,
+    "self_directed_learning_hours": 90,
+    "total_learning_hours": 150,
+    "program": "Bachelor of Information Technology",
+    "description": "This course enables learners to use basic technologies for the development of web-based functionality. By the end of the course, learners will be able to develop simple web-based applications using industry relevant client/server-side programming languages and basic client/server communication, and use industry relevant tools and workflows in the development of web-based applications. Topics include web communication (client/server relationship), HTML, CSS, JavaScript, libraries/frameworks, responsive design, APIs, and basic deployment."
+  },
+  {
+    "course_title": "Introduction to Networks",
+    "sms_code": "ID515001 / IA515001",
+    "year": 1,
+    "credits": 15,
+    "prerequisites": [
+      "None"
+    ],
+    "directed_learning_hours": 60,
+    "workplace_learning_hours": 0,
+    "self_directed_learning_hours": 90,
+    "total_learning_hours": 150,
+    "program": "Bachelor of Information Technology",
+    "description": "This course introduces learners to fundamental networking concepts and technologies, covering the basics of network theory and skills needed to implement a simple network. By the end of the course, learners will be able to design and build a simple local area network using device addressing schemes and basic network configurations, and configure and troubleshoot end-to-end connectivity between local and remote networks using security best practices. Topics include the OSI model, types of networks, application layer functionality, transport layer protocols (TCP/UDP), network layer protocols (IPv4), layer 3 addressing and subnetting, data link layer concepts and addressing, network cabling, and configuring and testing a network."
+  },
+  {
+    "course_title": "Platforms and Devices",
+    "sms_code": "ID520003 / IA520003",
+    "year": 1,
+    "credits": 15,
+    "prerequisites": [
+      "None"
+    ],
+    "directed_learning_hours": 60,
+    "workplace_learning_hours": 0,
+    "self_directed_learning_hours": 90,
+    "total_learning_hours": 150,
+    "program": "Bachelor of Information Technology",
+    "description": "This course enables learners to use a range of devices, platforms and concepts utilised within the IT industry. By the end of the course, learners will be able to install and configure operating systems on devices for functionality and network connectivity, select and apply systems tools, command line and scripting to configure, maintain, and secure operating systems in local and virtual settings, and troubleshoot hardware and operating system faults for the main components of a computer. Topics include installing, configuring, and selecting PC hardware components, operating systems installation and maintenance, overview of operating systems (mobile, desktop, server), virtualisation, transmission protocols (e.g., FTP, SSH), file systems, backup and RAID systems, troubleshooting hardware and software, connecting and configuring devices (Bluetooth, Wi-Fi, printers, etc.), mounting drives, command line proficiency, basic network configuration, embedded systems (Raspberry Pi, Arduino), environmental impact of IT, and sustainability issues in purchasing, using, and disposing of devices."
+  },
+  {
+    "course_title": "Maths for IT",
+    "sms_code": "ID521001 / IA521001",
+    "year": 1,
+    "credits": 15,
+    "prerequisites": [
+      "None"
+    ],
+    "directed_learning_hours": 60,
+    "workplace_learning_hours": 0,
+    "self_directed_learning_hours": 90,
+    "total_learning_hours": 150,
+    "program": "Bachelor of Information Technology",
+    "description": "This course introduces learners to mathematical concepts and methods that underpin computer systems, primarily within the field of discrete mathematics. By the end of the course, learners will be able to use the mathematical structures and algorithms that underpin digital systems, and apply mathematical methods to solve problems in an Information Technology context. Topics include logic circuits, decimal and binary number systems, vectors and matrices, randomness and probability, factorials, permutations and combinations, check digits, random number generation, encryption, algorithms, iteration, recursion, hash tables and hash functions, and computational complexity."
+  }
   ]
 }
