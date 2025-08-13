@@ -6,8 +6,9 @@ interface Course {
   course_title: string;
   description: string;
   credits: number;
-  level: number;
+  year: number;
   sms_code: string;
+  program: string;
 }
 
 const CourseList: React.FC = () => {
@@ -63,12 +64,16 @@ const CourseList: React.FC = () => {
                 {course.credits}
               </p>
               <p>
-                <span className="font-semibold text-indigo-600">Level:</span>{" "}
-                {course.level}
+                <span className="font-semibold text-indigo-600">Year:</span>{" "}
+                {course.year}
               </p>
               <p>
                 <span className="font-semibold text-indigo-600">SMS Code:</span>{" "}
                 {course.sms_code}
+              </p>
+               <p>
+                <span className="font-semibold text-indigo-600">Program:</span>{" "}
+                {course.program}
               </p>
             </div>
           </div>
