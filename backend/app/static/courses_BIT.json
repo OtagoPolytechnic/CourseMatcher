@@ -302,5 +302,66 @@
     "program": "Bachelor of Information Technology",
     "description": "This course introduces the concepts of game development, including algorithms and data structures required to use a simple, industry-relevant framework. By the end of the course, learners will be able to design and build usable games using various introductory algorithms, following an appropriate software development methodology. Topics include Unity scripting, game mechanics, maze generation, and AI strategy."
   },
+  {
+    "course_title": "Year Two Special Topic",
+    "sms_code": "ID630151 / IA630151",
+    "year": 2,
+    "credits": 15,
+    "prerequisites": [
+      "120 credits at Level 5"
+    ],
+    "directed_learning_hours": 30,
+    "workplace_learning_hours": 0,
+    "self_directed_learning_hours": 120,
+    "total_learning_hours": 150,
+    "program": "Bachelor of Information Technology",
+    "description": "This course allows learners to carry out semi-independent exploration of a specific IT topic not covered by existing courses. Learners will negotiate objectives, a learning plan, assessment criteria, and time frames with a supervising lecturer. By the end of the course, learners will be able to examine and discuss a specific topic while applying underlying principles and concepts to the field of study. Content includes independent research using academic journals, textbooks, and credible online resources, with theoretical material and applied skills development supported by a staff supervisor."
+  },
+  {
+    "course_title": "Studio 5",
+    "sms_code": "ID728001 / IA728001",
+    "year": 3,
+    "credits": 15,
+    "prerequisites": [
+      "ID622001"
+    ],
+    "directed_learning_hours": 15,
+    "workplace_learning_hours": 0,
+    "self_directed_learning_hours": 135,
+    "total_learning_hours": 150,
+    "program": "Bachelor of Information Technology",
+    "description": "This course enables learners to apply technical skills within complex IT projects and extend professional behaviour through group work, professional development activities, and external engagement. By the end of the course, learners will be able to analyse real-world problems to create IT systems, apply technical and theoretical skills to complex situations, and contribute as part of a structured development team. Learners complete large, real client-driven projects under supervision."
+  },
+  {
+    "course_title": "Studio 6",
+    "sms_code": "ID732001",
+    "year": 3,
+    "credits": 15,
+    "prerequisites": [
+      "ID728001"
+    ],
+    "directed_learning_hours": 15,
+    "workplace_learning_hours": 0,
+    "self_directed_learning_hours": 135,
+    "total_learning_hours": 150,
+    "program": "Bachelor of Information Technology",
+    "description": "This course enables learners to extend their skills within a complex IT project. By the end of the course, learners will be able to critically evaluate and apply processes to unfamiliar and complex problems, engage in advanced study in specialist areas, and demonstrate leadership within a project group. Learners complete the development of large, real client-driven projects under supervision."
+  },
+  {
+    "course_title": "Developing Flexible IT Courses",
+    "sms_code": "ID703001",
+    "year": 3,
+    "credits": 15,
+    "prerequisites": [
+      "IN502001"
+    ],
+    "directed_learning_hours": 60,
+    "workplace_learning_hours": 0,
+    "self_directed_learning_hours": 90,
+    "total_learning_hours": 150,
+    "program": "Bachelor of Information Technology",
+    "description": "This course prepares learners for the training role often undertaken by IT professionals. By the end of the course, learners will be able to design, create, implement, and evaluate a computer-based tutorial to teach technical skills or knowledge to a specified audience, and design, conduct, and evaluate a blended IT training programme, including Treaty of Waitangi considerations. Topics include evaluating training materials, screen recording software, interactive quizzes, tutorial writing, learning tools, learning styles, training needs analysis, training methods, conducting sessions, evaluation, computer-based training, and interactive facilitation."
+  },
+  
   ]
 }
