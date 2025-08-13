@@ -119,6 +119,67 @@
     "total_learning_hours": 150,
     "program": "Bachelor of Information Technology",
     "description": "This course introduces learners to mathematical concepts and methods that underpin computer systems, primarily within the field of discrete mathematics. By the end of the course, learners will be able to use the mathematical structures and algorithms that underpin digital systems, and apply mathematical methods to solve problems in an Information Technology context. Topics include logic circuits, decimal and binary number systems, vectors and matrices, randomness and probability, factorials, permutations and combinations, check digits, random number generation, encryption, algorithms, iteration, recursion, hash tables and hash functions, and computational complexity."
-  }
+  },
+  {
+    "course_title": "Year One Special Topic",
+    "sms_code": "ID530151 / IA530151",
+    "year": 1,
+    "credits": 15,
+    "prerequisites": [
+      "None"
+    ],
+    "directed_learning_hours": 30,
+    "workplace_learning_hours": 0,
+    "self_directed_learning_hours": 120,
+    "total_learning_hours": 150,
+    "program": "Bachelor of Information Technology",
+    "description": "This course allows learners to pursue an individual course of study focused in depth on a specific aspect of Information Technology. By the end of the course, learners will be able to analyse a specific topic whilst applying the underlying principles and concepts to the field of study. The process may include producing a proposal identifying the purpose, scope, required skills and knowledge, and learning and assessment plan; carrying out the special topic work; compiling a work log or progress report; reviewing progress with a supervisor; and presenting assessment material or a final report."
+  },
+  {
+    "course_title": "Studio 3",
+    "sms_code": "ID606001 / IA606001",
+    "year": 2,
+    "credits": 15,
+    "prerequisites": [
+      "ID503001 / IA503001"
+    ],
+    "directed_learning_hours": 60,
+    "workplace_learning_hours": 0,
+    "self_directed_learning_hours": 90,
+    "total_learning_hours": 150,
+    "program": "Bachelor of Information Technology",
+    "description": "This course enables learners to use an industry-relevant project management approach to produce simple, functional group outputs. By the end of the course, learners will be able to analyse user requirements to inform technical project work and produce user-centric functionality, and employ ethical and sustainable development methodologies and tools in a team environment. Topics include iterative design thinking strategies, user-driven development, modern team collaboration and development frameworks, sound communication and project management strategies, and producing high-quality technical outputs."
+  },
+  {
+    "course_title": "Studio 4",
+    "sms_code": "ID622001 / IA622001",
+    "year": 2,
+    "credits": 15,
+    "prerequisites": [
+      "ID606001"
+    ],
+    "directed_learning_hours": 60,
+    "workplace_learning_hours": 0,
+    "self_directed_learning_hours": 90,
+    "total_learning_hours": 150,
+    "program": "Bachelor of Information Technology",
+    "description": "This course focuses on producing a professional, high-quality group project adhering to industry-relevant quality assurance and ethical practices. By the end of the course, learners will be able to select and apply industry-standard tools and processes to solve non-trivial problems in a team environment, and analyse and manage development challenges to create production-quality outputs. Topics include security, privacy, quality, user experience, deployment, modern quality assurance practices, appropriate use of automation, and efficient cross-discipline teamwork."
+  },
+  {
+    "course_title": "Databases 2",
+    "sms_code": "ID605001 / IA605001",
+    "year": 2,
+    "credits": 15,
+    "prerequisites": [
+      "IN505001",
+      "IN511001"
+    ],
+    "directed_learning_hours": 60,
+    "workplace_learning_hours": 0,
+    "self_directed_learning_hours": 90,
+    "total_learning_hours": 150,
+    "program": "Bachelor of Information Technology",
+    "description": "This course provides an understanding of the fundamentals of database management systems, with emphasis on relational systems. By the end of the course, learners will be able to plan and build a normalised relational database to solve a specified problem, and use syntactically correct SQL to write database queries that ensure data integrity. Topics include the role of relational databases and relational database management systems, relational algebra, functional dependencies, normalisation, RDBMS architecture, query construction and optimisation, data modelling, design and implementation of relational databases, and principles of database administration and security."
+  },
   ]
 }
