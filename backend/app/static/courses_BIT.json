@@ -422,5 +422,66 @@
     "program": "Bachelor of Information Technology",
     "description": "This course enables learners to build and deploy optimised and efficient applications using a range of advanced industry tools and frameworks. By the end of the course, learners will be able to critically evaluate and implement a range of programming paradigms to solve unfamiliar problems, and create efficient full-stack applications using advanced industry techniques. Topics include progressive web applications, database replication, advanced design patterns, code optimisation (tree shaking, code splitting, dynamic loading), code minimisation, compression, benchmarking, CDNs, caching, message queues, and WebSockets."
   },
+  {
+    "course_title": "Advanced Algorithms",
+    "sms_code": "ID711002",
+    "year": 3,
+    "credits": 15,
+    "prerequisites": [
+      "ID608001"
+    ],
+    "directed_learning_hours": 60,
+    "workplace_learning_hours": 0,
+    "self_directed_learning_hours": 90,
+    "total_learning_hours": 150,
+    "program": "Bachelor of Information Technology",
+    "description": "This course enables learners to use a wide variety of advanced algorithms and tools to develop efficient solutions to complex computational problems. By the end of the course, learners will be able to evaluate algorithmic tools for efficient software, implement appropriate algorithms and data structures for nontrivial problems, and optimise computational resource usage. Topics include genetic algorithms, computer graphics, modelling and simulation, NLP, optimisation, data analytics, measuring algorithm efficiency, industrial control, signal processing, blockchain, searching, sorting, hashing, learning algorithms, and security."
+  },
+  {
+    "course_title": "Mobile Application Development",
+    "sms_code": "ID721001 / IA721001",
+    "year": 3,
+    "credits": 15,
+    "prerequisites": [
+      "ID607001"
+    ],
+    "directed_learning_hours": 60,
+    "workplace_learning_hours": 0,
+    "self_directed_learning_hours": 90,
+    "total_learning_hours": 150,
+    "program": "Bachelor of Information Technology",
+    "description": "This course covers the design and development of mobile applications, enabling learners to publish them to mainstream app stores. By the end of the course, learners will be able to implement and publish complete, non-trivial, industry-standard mobile applications following sound architectural and code-quality standards, identify relevant use cases, and follow software engineering practices in design. Topics include mobile interaction/interface design, native vs. web-based apps, user-centred design/testing, hardware constraints, SDKs, APIs, software architectures for mobile, and publishing procedures."
+  },
+  {
+    "course_title": "Artificial Intelligence and Data Science",
+    "sms_code": "ID727001",
+    "year": 3,
+    "credits": 15,
+    "prerequisites": [
+      "IN511001",
+      "IN521001"
+    ],
+    "directed_learning_hours": 60,
+    "workplace_learning_hours": 0,
+    "self_directed_learning_hours": 90,
+    "total_learning_hours": 150,
+    "program": "Bachelor of Information Technology",
+    "description": "This course enables learners to choose and deploy appropriate machine intelligence tools to solve problems requiring a cognitive component. Applications include computer vision, NLP, recommendation systems, data analytics, anomaly detection, chatbots, machine translation, autonomous navigation, and robotic control. By the end of the course, learners will be able to analyse the principles, advantages, limitations, applications, and implications of AI; choose, implement, and evaluate machine learning models; and apply data science techniques for complex data. Topics include neural networks (CNNs, LSTMs, GRUs), web scraping, transfer learning, language models, generative models, reinforcement learning, GPU computation, ethics in AI, learning theory, and AI APIs."
+  },
+  {
+    "course_title": "Operations Engineering 2",
+    "sms_code": "ID734001",
+    "year": 3,
+    "credits": 15,
+    "prerequisites": [
+      "ID609001"
+    ],
+    "directed_learning_hours": 60,
+    "workplace_learning_hours": 0,
+    "self_directed_learning_hours": 90,
+    "total_learning_hours": 150,
+    "program": "Bachelor of Information Technology",
+    "description": "This course enables learners to configure, manage, and troubleshoot systems within an enterprise network, covering both application and operating system components. By the end of the course, learners will be able to implement advanced system operations and administration tasks, formulate disaster recovery and mitigation policies, discuss ethics and social responsibility in system administration, and use configuration management schemes. Topics include package building/distribution, server management, performance tuning, network monitoring, configuration management, backup systems, disaster recovery, and best practices for system administration."
+  },
   ]
 }
