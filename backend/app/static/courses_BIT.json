@@ -606,5 +606,50 @@
     "program": "Bachelor of Information Technology",
     "description": "This course allows learners to conduct independent exploration of a specific IT topic not supported by existing papers. By the end of the course, learners will be able to critically analyse the topic while applying relevant principles and concepts. Work involves research using academic and credible sources, combining theoretical and applied skills development."
   },
+  {
+    "course_title": "Unspecified Credits",
+    "sms_code": "ID550001 / IA550001",
+    "year": 1,
+    "credits": 15,
+    "prerequisites": [
+      "None"
+    ],
+    "directed_learning_hours": 0,
+    "workplace_learning_hours": 0,
+    "self_directed_learning_hours": 0,
+    "total_learning_hours": 0,
+    "program": "Bachelor of Information Technology",
+    "description": "This paper acts as a repository for “unspecified credits” where learners undertake courses from outside the Bachelor of Information Technology. Up to 15 credits may normally be used. Any course recognised as contributing to a degree may be used, with credit calculated based on EFTS contribution (0.125 EFTS = 15 credits). No fee is charged. Outcomes and content are determined by the external paper and must not significantly overlap with other papers undertaken by the learner."
+  },
+  {
+    "course_title": "Unspecified Credits",
+    "sms_code": "ID650001 / IA650001",
+    "year": 2,
+    "credits": 15,
+    "prerequisites": [
+      "None"
+    ],
+    "directed_learning_hours": 0,
+    "workplace_learning_hours": 0,
+    "self_directed_learning_hours": 0,
+    "total_learning_hours": 0,
+    "program": "Bachelor of Information Technology",
+    "description": "This paper acts as a repository for “unspecified credits” where learners undertake courses from outside the Bachelor of Information Technology. Up to 15 credits may normally be used. Any course recognised as contributing to a degree may be used, with credit calculated based on EFTS contribution (0.125 EFTS = 15 credits). No fee is charged. Outcomes and content are determined by the external paper and must not significantly overlap with other papers undertaken by the learner."
+  },
+  {
+    "course_title": "Unspecified Credits",
+    "sms_code": "ID750001 / IA750001",
+    "year": 3,
+    "credits": 15,
+    "prerequisites": [
+      "None"
+    ],
+    "directed_learning_hours": 0,
+    "workplace_learning_hours": 0,
+    "self_directed_learning_hours": 0,
+    "total_learning_hours": 0,
+    "program": "Bachelor of Information Technology",
+    "description": "This paper acts as a repository for “unspecified credits” where learners undertake courses from outside the Bachelor of Information Technology. Up to 15 credits may normally be used. Any course recognised as contributing to a degree may be used, with credit calculated based on EFTS contribution (0.125 EFTS = 15 credits). No fee is charged. Outcomes and content are determined by the external paper and must not significantly overlap with other papers undertaken by the learner."
+  }
   ]
 }
