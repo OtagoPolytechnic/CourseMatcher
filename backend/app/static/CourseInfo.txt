@@ -185,10 +185,6 @@
 **Total Learning:** 150
 **Description:** This course provides learners with knowledge and hands-on skills to perform system administration tasks securely across different computing platforms using the command line interface. By the end of the course, learners will be able to identify key tools and services for administering computing systems, develop advanced shell scripts to automate administration tasks, and use cloud and directory services for enterprise infrastructure. Topics include network and firewall configuration, advanced user/group management, advanced scripting, ticketing, backup and disaster recovery, directory services, cloud services deployment, OS and network hardening, and containers.
 
-Here’s the extracted data for the courses in your fifth PDF, formatted with Aim, Learning Outcomes, and Indicative Content merged into the Description:
-
----
-
 **Course Title:** Embedded Systems
 **SMS Code:** ID620001 / IA620001
 **Level:** 6
@@ -298,10 +294,6 @@ Here’s the extracted data for the courses in your fifth PDF, formatted with Ai
 **Self-Directed Learning:** 90
 **Total Learning:** 150
 **Description:** This course provides theoretical knowledge and technical skills in information security, guiding learners through identifying and analysing security threats, then mitigating them with robust solutions. By the end of the course, learners will be able to apply security best practices to mitigate vulnerabilities and implement cryptographic solutions for modern systems. Topics include information security mechanisms, cryptography, network security, web application security, server hardening, and computer forensics.
-
-Here’s the extracted data for the final PDF you provided, with Aim, Learning Outcomes, and Indicative Content merged into the Description field:
-
----
 
 **Course Title:** Advanced Application Development Concepts
 **SMS Code:** ID730001
