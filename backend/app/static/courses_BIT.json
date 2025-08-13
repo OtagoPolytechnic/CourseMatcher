@@ -483,5 +483,128 @@
     "program": "Bachelor of Information Technology",
     "description": "This course enables learners to configure, manage, and troubleshoot systems within an enterprise network, covering both application and operating system components. By the end of the course, learners will be able to implement advanced system operations and administration tasks, formulate disaster recovery and mitigation policies, discuss ethics and social responsibility in system administration, and use configuration management schemes. Topics include package building/distribution, server management, performance tuning, network monitoring, configuration management, backup systems, disaster recovery, and best practices for system administration."
   },
+  {
+    "course_title": "UX Engineering",
+    "sms_code": "ID729002",
+    "year": 3,
+    "credits": 15,
+    "prerequisites": [
+      "ID608001"
+    ],
+    "directed_learning_hours": 60,
+    "workplace_learning_hours": 0,
+    "self_directed_learning_hours": 90,
+    "total_learning_hours": 150,
+    "program": "Bachelor of Information Technology",
+    "description": "This course builds on front-end development skills to design and build inclusive, flexible, and high-quality user experiences. By the end of the course, learners will be able to use advanced front-end technologies and workflows for efficient development, and design solutions to complex UX problems. Topics include design thinking, usability principles, UXD research, user requirements (including accessibility), user and design testing, advanced CSS, preprocessors, and semantic, inclusive markup."
+  },
+  {
+    "course_title": "Administering a Virtual Infrastructure",
+    "sms_code": "ID720001 / IA720001",
+    "year": 3,
+    "credits": 15,
+    "prerequisites": [
+      "ID719001"
+    ],
+    "directed_learning_hours": 60,
+    "workplace_learning_hours": 0,
+    "self_directed_learning_hours": 90,
+    "total_learning_hours": 150,
+    "program": "Bachelor of Information Technology",
+    "description": "This course provides in-depth knowledge and techniques for implementing, optimising, and troubleshooting virtual infrastructures. By the end of the course, learners will be able to plan, install, and configure virtual infrastructures, deploy virtual machines and applications in cloud platforms, monitor and troubleshoot service levels, and analyse performance factors. Topics include installing/configuring virtual environments, SAN planning, performance bottleneck analysis (CPU, network, memory, application), and troubleshooting hypervisors."
+  },
+  {
+    "course_title": "Advanced Networking",
+    "sms_code": "ID723001",
+    "year": 3,
+    "credits": 15,
+    "prerequisites": [
+      "ID615006"
+    ],
+    "directed_learning_hours": 60,
+    "workplace_learning_hours": 0,
+    "self_directed_learning_hours": 90,
+    "total_learning_hours": 150,
+    "program": "Bachelor of Information Technology",
+    "description": "This course provides learners with an understanding of advanced networking protocols, services, and concepts for medium to large-scale networks. By the end of the course, learners will be able to design and implement scalable, fault-tolerant solutions, develop policies for network security and performance, and evaluate new technologies to enhance network flexibility. Topics include BGP, STP, link aggregation, HSRP, GLBP, OSPF, VRF, MPLS VPNs, SDN, and QoS."
+  },
+  {
+    "course_title": "Enterprise Networking, Security and Automation",
+    "sms_code": "ID735001",
+    "year": 3,
+    "credits": 15,
+    "prerequisites": [
+      "ID615008",
+      "IA615008"
+    ],
+    "directed_learning_hours": 60,
+    "workplace_learning_hours": 0,
+    "self_directed_learning_hours": 90,
+    "total_learning_hours": 150,
+    "program": "Bachelor of Information Technology",
+    "description": "This course enables learners to design, secure, operate, and troubleshoot enterprise-scale networks. By the end of the course, learners will be able to implement scalable and secure network solutions, deploy management and monitoring services for network integrity, and evaluate the impact of virtualisation, automation, and controller-based architectures. Topics include network design, QoS, ACLs, NAT, advanced routing protocols, network virtualisation, automation, management, and SDN."
+  },
+  {
+    "course_title": "Internet of Things and Cloud Computing",
+    "sms_code": "ID736001 / IA736001",
+    "year": 3,
+    "credits": 15,
+    "prerequisites": [
+      "ID620001 / IA620001",
+      "ID609001 / IA609001"
+    ],
+    "directed_learning_hours": 60,
+    "workplace_learning_hours": 0,
+    "self_directed_learning_hours": 90,
+    "total_learning_hours": 150,
+    "program": "Bachelor of Information Technology",
+    "description": "This course enables learners to investigate IoT solutions for real-world problems and develop IoT applications involving cloud computing. By the end of the course, learners will be able to analyse cloud-based infrastructure models, evaluate IoT systems architecture and applications, and design IoT solutions deployed to the cloud. Topics include IoT applications and use cases, system architecture, IoT cloud platforms, interoperability, IoT networks, cloud computing models (IaaS, PaaS, SaaS), DevOps, and IoT security."
+  },
+  {
+    "course_title": "Advanced Game Development",
+    "sms_code": "ID737001 / IA737001",
+    "year": 3,
+    "credits": 15,
+    "prerequisites": [
+      "ID511001 / IA511001"
+    ],
+    "directed_learning_hours": 60,
+    "workplace_learning_hours": 0,
+    "self_directed_learning_hours": 90,
+    "total_learning_hours": 150,
+    "program": "Bachelor of Information Technology",
+    "description": "This course enables learners to apply game programming techniques and tools to develop effective games. By the end of the course, learners will be able to design and develop a game using industry-standard tools, technologies, and practices. Topics include game graphics and audio, graphical game programming, Unity3D development, C# scripting, AR and VR concepts, Google VR, ARCore, and game APIs."
+  },
+  {
+    "course_title": "Business Analysis and Intelligence",
+    "sms_code": "ID738001 / IA738001",
+    "year": 3,
+    "credits": 15,
+    "prerequisites": [
+      "ID521001 / IA521001"
+    ],
+    "directed_learning_hours": 60,
+    "workplace_learning_hours": 0,
+    "self_directed_learning_hours": 90,
+    "total_learning_hours": 150,
+    "program": "Bachelor of Information Technology",
+    "description": "This course enables learners to apply theories, methods, and tools for analysing business processes and proposing solutions to organisational problems. By the end of the course, learners will be able to apply business analysis methods, use AI for business intelligence, and apply data analytics processes to propose recommendations. Topics include business analysis concepts, tools and techniques, business analyst competencies, machine learning for business, data-driven innovation, business improvements, data analytics, and forecasting."
+  },
+  {
+    "course_title": "Year Three Special Topic",
+    "sms_code": "ID730151 / IA730151",
+    "year": 3,
+    "credits": 15,
+    "prerequisites": [
+      "120 Level 5 credits",
+      "90 Level 6 credits"
+    ],
+    "directed_learning_hours": 15,
+    "workplace_learning_hours": 0,
+    "self_directed_learning_hours": 135,
+    "total_learning_hours": 150,
+    "program": "Bachelor of Information Technology",
+    "description": "This course allows learners to conduct independent exploration of a specific IT topic not supported by existing papers. By the end of the course, learners will be able to critically analyse the topic while applying relevant principles and concepts. Work involves research using academic and credible sources, combining theoretical and applied skills development."
+  },
   ]
 }
