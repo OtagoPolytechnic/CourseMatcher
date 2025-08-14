@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 import json
+import sqlite3
 # from app.course_parser import (
 #     extract_text,
 #     split_blocks,
@@ -17,19 +18,31 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+DB_PATH = "app/data/BIT.db"
+
+def dict_factory(cursor, row):
+    return {col[0]: row[idx] for idx, col in enumerate(cursor.description)}
+
 @app.get("/courses/")
 
 def get_courses():
-    file_path = "app/static/courses_BIT.json"  
-    
-    try:
-        with open(file_path, "r", encoding="utf-8") as f:
-            courses_data = json.load(f)
-        return {"courses": courses_data["courses"] if "courses" in courses_data else courses_data}
-    except FileNotFoundError:
-        return {"error": f"File not found: {file_path}"}
-    except json.JSONDecodeError as e:
-        return {"error": f"Invalid JSON format in {file_path}: {str(e)}"}
+    conn = sqlite3.connect(DB_PATH)
+    conn.row_factory = dict_factory
+    cur = conn.cursor()
+    rows = cur.execute("""
+        SELECT
+          course_title, sms_code, year, credits,
+          prerequisites, directed_learning_hours, workplace_learning_hours,
+          self_directed_learning_hours, total_learning_hours, program, description
+        FROM courses
+        ORDER BY year ASC, course_title ASC
+    """).fetchall()
+    conn.close()
+
+    for r in rows:
+        r["prerequisites"] = json.loads(r.get("prerequisites") or "[]")
+
+    return {"courses": rows}
     
 # def parse_local_courses():
 #     file_path = "app/static/CourseInfo.txt" 
