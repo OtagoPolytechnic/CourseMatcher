@@ -20,32 +20,19 @@ const SearchBar = () => {
   };
 
   return (
-    <form onSubmit={onSubmit} className="flex flex-col items-center gap-4">
+    <form
+      onSubmit={onSubmit}
+      className="flex flex-col items-center gap-4 w-full px-4"
+    >
       <input
         value={q}
         onChange={(e) => setQ(e.target.value)}
         placeholder="Search for Courses"
-        style={{
-          width: "700px",
-          height: "40px",
-          fontSize: "1rem",
-          padding: "0.5rem 1rem",
-          border: "1px solid #ccc",
-          borderRadius: "8px",
-          boxSizing: "border-box",
-        }}
+        className="w-full max-w-2xl h-10 text-base px-4 py-2 border border-gray-300 rounded-md shadow-sm"
       />
       <button
         type="submit"
-        style={{
-          padding: "0.5rem 1.5rem",
-          backgroundColor: "#4f46e5",
-          color: "white",
-          border: "none",
-          borderRadius: "6px",
-          fontSize: "1rem",
-          cursor: "pointer",
-        }}
+        className="px-6 py-2 bg-blue-700 text-white rounded-md text-base hover:bg-blue-800 transition"
       >
         Search
       </button>
