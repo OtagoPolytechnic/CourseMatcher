@@ -40,12 +40,12 @@ const CourseList: React.FC = () => {
   }
 
   return (
-    <div className="min-h-screen w-full overflow-x-hidden bg-slate-50 px-4 py-10">
-      <h1 className="text-4xl font-extrabold text-blue-700 text-center mb-10 drop-shadow-sm">
+    <div className="min-h-screen w-full overflow-x-hidden bg-slate-50 px-4 py-16 space-y-8">
+      <h1 className="text-4xl font-extrabold text-blue-700 text-center mb-10 drop-shadow-sm mb-6">
         Bachelor of Information Technology Courses
       </h1>
 
-      <div className="max-w-2xl mx-auto mb-6 w-full px-4">
+      <div className="max-w-2xl mx-auto w-full px-4 mb-8">
         <SearchBar />
       </div>
 
