@@ -25,8 +25,7 @@ const ProgramNav = () => {
             <li key={program.path}>
               <button
                 onClick={() => navigate(program.path)}
-                className="block w-full text-left px-4 py-2 text-sm text-blue-700 hover:bg-blue-100 hover:text-blue-900 transition-colors duration-150"
-              >
+                className="block w-full text-left px-4 py-2 text-sm bg-blue-50 hover:bg-blue-100 text-blue-800 rounded-md transition-all duration-200">
                 {program.name}
               </button>
             </li>

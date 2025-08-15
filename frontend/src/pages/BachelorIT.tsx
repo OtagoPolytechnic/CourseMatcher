@@ -53,7 +53,7 @@ const CourseList: React.FC = () => {
         {courses.map((course) => (
           <div
             key={course.id}
-            className="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-200 p-6 border border-gray-100 flex flex-col justify-between"
+            className="bg-white rounded-xl shadow-md hover:shadow-xl hover:scale-[1.01] transition-all duration-200 ease-in-out p-6 border border-gray-100 flex flex-col justify-between"
           >
             <h2 className="text-xl font-bold text-blue-800 mb-4 min-h-[3rem]">
               {course.course_title}
