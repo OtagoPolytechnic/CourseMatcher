@@ -53,13 +53,15 @@ const CourseList: React.FC = () => {
         {courses.map((course) => (
           <div
             key={course.id}
-            className="bg-white border border-gray-200 p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-200"
+            className="bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-200 p-6 border border-gray-100 flex flex-col justify-between"
           >
-            <h2 className="text-xl font-bold text-blue-700 mb-2">
+            <h2 className="text-xl font-bold text-blue-800 mb-4 min-h-[3rem]">
               {course.course_title}
             </h2>
-            <p className="text-gray-700 text-sm mb-4">{course.description}</p>
-            <div className="text-sm space-y-1 text-gray-600 mt-4">
+
+            <p className="text-gray-700 text-sm mb-6">{course.description}</p>
+
+            <div className="text-sm text-gray-600 space-y-1 mt-auto">
               <p>
                 <span className="font-semibold text-blue-700">Credits:</span>{" "}
                 {course.credits}
