@@ -1,6 +1,8 @@
 import sqlite3
 import json
+import numpy as np
 from pathlib import Path
+from sentence_transformers import SentenceTransformer
 
 db_path = Path("app/data/BIT.db")
 json_path = Path("app/static/courses_BIT.json")
@@ -28,20 +30,26 @@ CREATE TABLE IF NOT EXISTS courses (
     self_directed_learning_hours INTEGER,
     total_learning_hours INTEGER,
     program TEXT,
-    description TEXT
+    description TEXT,
+    embedding BLOB
 )
 """)
+
+model = SentenceTransformer("all-MiniLM-L6-v2")
 
 cur.execute("DELETE FROM courses")
 
 for course in data:
+    text = f"{course['course_title']}. {course['description']}"
+    vec = model.encode([text], normalize_embeddings=True)[0]
+    blob = np.asarray(vec, dtype=np.float32).tobytes()
     cur.execute("""
         INSERT INTO courses (
             course_title, sms_code, year, credits, prerequisites,
             directed_learning_hours, workplace_learning_hours,
             self_directed_learning_hours, total_learning_hours,
-            program, description
-        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            program, description, embedding
+        ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     """, (
         course["course_title"],
         course["sms_code"],
@@ -53,7 +61,8 @@ for course in data:
         course["self_directed_learning_hours"],
         course["total_learning_hours"],
         course["program"],
-        course["description"]
+        course["description"],
+        blob
     ))
 
 conn.commit()
