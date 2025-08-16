@@ -1,33 +1,63 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState,  useMemo} from "react";
+import { useLocation } from "react-router-dom";
 import SearchBar from "../components/SearchBar";
 
 interface Course {
-  id: number;
+  id?: number;
   course_title: string;
   description: string;
   credits: number;
   year: number;
   sms_code: string;
   program: string;
+  similarity?: number;
 }
 
 const CourseList: React.FC = () => {
   const [courses, setCourses] = useState<Course[]>([]);
   const [loading, setLoading] = useState(true);
-  const [expandedId, setExpandedId] = useState<number | null>(null);
+  const [expandedId, setExpandedId] = useState<string | null>(null);
+
+const location = useLocation();
+  const query = useMemo(() => {
+    const params = new URLSearchParams(location.search);
+    return params.get("q") ?? "";
+  }, [location.search]);
 
   useEffect(() => {
-    fetch("http://localhost:8000/courses/")
-      .then((res) => res.json())
-      .then((data) => {
-        setCourses(data.courses);
-        setLoading(false);
-      })
-      .catch((error) => {
+    let abort = false;
+
+    async function load() {
+      try {
+        setLoading(true);
+
+        if (!query || query.trim().length < 3) {
+          const res = await fetch("http://localhost:8000/courses/");
+          const data = await res.json();
+          if (!abort) setCourses(data.courses ?? []);
+          return;
+        }
+
+        const url = new URL("http://localhost:8000/search");
+        url.searchParams.set("q", query);
+        url.searchParams.set("k", "12");
+        const res = await fetch(url.toString());
+        const data = await res.json();
+        if (!abort) setCourses((data.results ?? []).slice(0, 3));
+        if (!abort) setExpandedId(null); 
+      } catch (error) {
         console.error("Failed to fetch courses:", error);
-        setLoading(false);
-      });
-  }, []);
+      } finally {
+        if (!abort) setLoading(false);
+      }
+    }
+
+    load();
+    return () => {
+      abort = true;
+    };
+  }, [query]);
+
 
   if (loading) {
     return (
@@ -51,16 +81,17 @@ const CourseList: React.FC = () => {
         </h1>
 
         <div className="max-w-2xl mx-auto w-full px-4 mb-8">
-          <SearchBar />
+          <SearchBar/>
         </div>
 
         <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto px-4 items-stretch">
           {courses.map((course) => {
-            const isExpanded = expandedId === course.id;
+            const key = course.sms_code;
+            const isExpanded = expandedId === key;
 
             return (
               <div
-                key={course.id}
+                key={key}
                 className="bg-white rounded-xl shadow-md hover:shadow-xl hover:scale-[1.01] transition-all duration-200 ease-in-out p-6 border border-gray-100 flex flex-col justify-between"
               >
                 <h2 className="text-xl font-bold text-blue-800 text-center mb-4 min-h-[3rem]">
@@ -75,10 +106,8 @@ const CourseList: React.FC = () => {
                   {course.description}
                 </p>
 
-                <button
-                  onClick={() =>
-                    setExpandedId(isExpanded ? null : course.id)
-                  }
+                 <button
+                  onClick={() => setExpandedId(isExpanded ? null : key)}
                   className="inline-block bg-blue-100 text-blue-700 font-semibold text-sm px-3 py-1 rounded-full hover:bg-blue-200 transition-all duration-200 mb-4"
                 >
                   {isExpanded ? "Show Less" : "Read More"}
