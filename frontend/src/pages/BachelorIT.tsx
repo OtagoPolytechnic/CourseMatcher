@@ -43,7 +43,7 @@ const location = useLocation();
         url.searchParams.set("k", "12");
         const res = await fetch(url.toString());
         const data = await res.json();
-        if (!abort) setCourses((data.results ?? []).slice(0, 6));
+        if (!abort) setCourses((data.results ?? []).slice(0, 3));
         if (!abort) setExpandedId(null); 
       } catch (error) {
         console.error("Failed to fetch courses:", error);
