@@ -1,4 +1,4 @@
-import React, { useEffect, useState,  useMemo} from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import { useLocation } from "react-router-dom";
 import SearchBar from "../components/SearchBar";
 
@@ -13,12 +13,18 @@ interface Course {
   similarity?: number;
 }
 
+const getEmojiFromScore = (score: number): string => {
+  if (score > 0.7) return "🟢";
+  if (score >= 0.5) return "🟠";
+  return "🔴";
+};
+
 const CourseList: React.FC = () => {
   const [courses, setCourses] = useState<Course[]>([]);
   const [loading, setLoading] = useState(true);
   const [expandedId, setExpandedId] = useState<string | null>(null);
 
-const location = useLocation();
+  const location = useLocation();
   const query = useMemo(() => {
     const params = new URLSearchParams(location.search);
     return params.get("q") ?? "";
@@ -43,8 +49,21 @@ const location = useLocation();
         url.searchParams.set("k", "12");
         const res = await fetch(url.toString());
         const data = await res.json();
-        if (!abort) setCourses((data.results ?? []).slice(0, 3));
-        if (!abort) setExpandedId(null); 
+
+        console.log("Fetched similarity scores with color labels:");
+        (data.results ?? []).slice(0, 6).forEach((course: Course) => {
+          const score = course.similarity ?? 0;
+          let label = "";
+
+          if (score > 0.7) label = "Green";
+          else if (score >= 0.5) label = "Orange";
+          else label = "Red";
+
+          console.log(`${course.course_title}: ${score.toFixed(4)} → ${label}`);
+        });
+
+        if (!abort) setCourses((data.results ?? []).slice(0, 6));
+        if (!abort) setExpandedId(null);
       } catch (error) {
         console.error("Failed to fetch courses:", error);
       } finally {
@@ -57,7 +76,6 @@ const location = useLocation();
       abort = true;
     };
   }, [query]);
-
 
   if (loading) {
     return (
@@ -81,7 +99,7 @@ const location = useLocation();
         </h1>
 
         <div className="max-w-2xl mx-auto w-full px-4 mb-8">
-          <SearchBar/>
+          <SearchBar />
         </div>
 
         <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto px-4 items-stretch">
@@ -95,6 +113,9 @@ const location = useLocation();
                 className="bg-white rounded-xl shadow-md hover:shadow-xl hover:scale-[1.01] transition-all duration-200 ease-in-out p-6 border border-gray-100 flex flex-col justify-between"
               >
                 <h2 className="text-xl font-bold text-blue-800 text-center mb-4 min-h-[3rem]">
+                  {course.similarity !== undefined
+                    ? getEmojiFromScore(course.similarity) + " "
+                    : ""}
                   {course.course_title}
                 </h2>
 
@@ -106,7 +127,7 @@ const location = useLocation();
                   {course.description}
                 </p>
 
-                 <button
+                <button
                   onClick={() => setExpandedId(isExpanded ? null : key)}
                   className="inline-block bg-blue-100 text-blue-700 font-semibold text-sm px-3 py-1 rounded-full hover:bg-blue-200 transition-all duration-200 mb-4"
                 >
@@ -115,7 +136,9 @@ const location = useLocation();
 
                 <div className="text-sm text-gray-600 space-y-1 mt-auto">
                   <p>
-                    <span className="font-semibold text-blue-700">Credits:</span>{" "}
+                    <span className="font-semibold text-blue-700">
+                      Credits:
+                    </span>{" "}
                     {course.credits}
                   </p>
                   <p>
@@ -123,11 +146,15 @@ const location = useLocation();
                     {course.year}
                   </p>
                   <p>
-                    <span className="font-semibold text-blue-700">SMS Code:</span>{" "}
+                    <span className="font-semibold text-blue-700">
+                      SMS Code:
+                    </span>{" "}
                     {course.sms_code}
                   </p>
                   <p>
-                    <span className="font-semibold text-blue-700">Program:</span>{" "}
+                    <span className="font-semibold text-blue-700">
+                      Program:
+                    </span>{" "}
                     {course.program}
                   </p>
                 </div>
