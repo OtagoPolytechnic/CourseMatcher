@@ -1,6 +1,7 @@
 services:
   - type: web
     name: coursematcher-api
+    plan: free
     env: python
     rootDir: backend
     buildCommand: pip install -r requirements.txt
