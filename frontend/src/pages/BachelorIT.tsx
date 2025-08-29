@@ -61,7 +61,7 @@ const CourseList: React.FC = () => {
           }
 
           const data = await res.json();
-          results[q] = (data.results ?? []).slice(0, 6);
+          results[q] = (data.results ?? []).slice(0, 3);
 
           results[q].forEach((course: Course) => {
             const score = course.similarity ?? 0;
@@ -69,7 +69,9 @@ const CourseList: React.FC = () => {
             if (score > 0.7) label = "Green";
             else if (score >= 0.5) label = "Orange";
             else label = "Red";
-            console.log(`${course.course_title}: ${score.toFixed(4)} → ${label}`);
+            console.log(
+              `${course.course_title}: ${score.toFixed(4)} → ${label}`
+            );
           });
         }
 
@@ -117,69 +119,77 @@ const CourseList: React.FC = () => {
 
         {Object.entries(coursesByQuery).map(([query, courses]) => (
           <div key={query} className="mb-10">
-            <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto px-4 items-stretch">
-              {courses.map((course) => {
-                const key = `${query}-${course.sms_code}`;
-                const isExpanded = expandedId === key;
+            <div className="border-2 border-blue-300 rounded-xl p-6 bg-white/80 shadow-md">
+              {queries.length > 1 && courses.length > 0 && (
+                <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">
+                  <span className="text-blue-700 font-semibold">
+                    {courses[0].course_title}
+                  </span>
+                </h2>
+              )}
 
-                return (
-                  <div
-                    key={key}
-                    className="bg-white rounded-xl shadow-md hover:shadow-xl hover:scale-[1.01] transition-all duration-200 ease-in-out p-6 border border-gray-100 flex flex-col justify-between"
-                  >
-                    <h2 className="text-xl font-bold text-blue-800 text-center mb-4 min-h-[3rem]">
-                      {course.similarity !== undefined
-                        ? getEmojiFromScore(course.similarity) + " "
-                        : ""}
-                      {course.course_title}
-                    </h2>
+              <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto items-stretch">
+                {courses.map((course) => {
+                  const key = `${query}-${course.sms_code}`;
+                  const isExpanded = expandedId === key;
 
-                    <p
-                      className={`text-gray-700 text-sm mb-4 ${
-                        !isExpanded ? "line-clamp-5" : ""
-                      }`}
+                  return (
+                    <div
+                      key={key}
+                      className="bg-white rounded-xl shadow-md hover:shadow-xl hover:scale-[1.01] transition-all duration-200 ease-in-out p-6 border border-gray-100 flex flex-col justify-between"
                     >
-                      {course.description}
-                    </p>
+                      <h2 className="text-xl font-bold text-blue-800 text-center mb-4 min-h-[3rem]">
+                        {course.similarity !== undefined
+                          ? getEmojiFromScore(course.similarity) + " "
+                          : ""}
+                        {course.course_title}
+                      </h2>
 
-                    <button
-                      onClick={() =>
-                        setExpandedId(isExpanded ? null : key)
-                      }
-                      className="inline-block bg-blue-100 text-blue-700 font-semibold text-sm px-3 py-1 rounded-full hover:bg-blue-200 transition-all duration-200 mb-4"
-                    >
-                      {isExpanded ? "Show Less" : "Read More"}
-                    </button>
+                      <p
+                        className={`text-gray-700 text-sm mb-4 ${
+                          !isExpanded ? "line-clamp-5" : ""
+                        }`}
+                      >
+                        {course.description}
+                      </p>
 
-                    <div className="text-sm text-gray-600 space-y-1 mt-auto">
-                      <p>
-                        <span className="font-semibold text-blue-700">
-                          Credits:
-                        </span>{" "}
-                        {course.credits}
-                      </p>
-                      <p>
-                        <span className="font-semibold text-blue-700">
-                          Year:
-                        </span>{" "}
-                        {course.year}
-                      </p>
-                      <p>
-                        <span className="font-semibold text-blue-700">
-                          SMS Code:
-                        </span>{" "}
-                        {course.sms_code}
-                      </p>
-                      <p>
-                        <span className="font-semibold text-blue-700">
-                          Program:
-                        </span>{" "}
-                        {course.program}
-                      </p>
+                      <button
+                        onClick={() => setExpandedId(isExpanded ? null : key)}
+                        className="inline-block bg-blue-100 text-blue-700 font-semibold text-sm px-3 py-1 rounded-full hover:bg-blue-200 transition-all duration-200 mb-4"
+                      >
+                        {isExpanded ? "Show Less" : "Read More"}
+                      </button>
+
+                      <div className="text-sm text-gray-600 space-y-1 mt-auto">
+                        <p>
+                          <span className="font-semibold text-blue-700">
+                            Credits:
+                          </span>{" "}
+                          {course.credits}
+                        </p>
+                        <p>
+                          <span className="font-semibold text-blue-700">
+                            Year:
+                          </span>{" "}
+                          {course.year}
+                        </p>
+                        <p>
+                          <span className="font-semibold text-blue-700">
+                            SMS Code:
+                          </span>{" "}
+                          {course.sms_code}
+                        </p>
+                        <p>
+                          <span className="font-semibold text-blue-700">
+                            Program:
+                          </span>{" "}
+                          {course.program}
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                );
-              })}
+                  );
+                })}
+              </div>
             </div>
           </div>
         ))}
