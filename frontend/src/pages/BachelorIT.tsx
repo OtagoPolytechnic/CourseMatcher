@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useMemo } from "react";
 import { useLocation } from "react-router-dom";
 import SearchBar from "../components/SearchBar";
+const API_BASE = import.meta.env.VITE_API_BASE_URL;
 
 interface Course {
   id?: number;
@@ -38,13 +39,13 @@ const CourseList: React.FC = () => {
         setLoading(true);
 
         if (!query || query.trim().length < 3) {
-          const res = await fetch("http://localhost:8000/courses/");
+          const res = await fetch(`${API_BASE}/courses/`);
           const data = await res.json();
           if (!abort) setCourses(data.courses ?? []);
           return;
         }
 
-        const url = new URL("http://localhost:8000/search");
+        const url = new URL(`${API_BASE}/search/`);
         url.searchParams.set("q", query);
         url.searchParams.set("k", "12");
         const res = await fetch(url.toString());
