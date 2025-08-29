@@ -12,8 +12,9 @@ services:
       - key: CORS_ORIGINS
         value: https://coursematcher-web.onrender.com
 
-  - type: static_site
+  - type: web
     name: coursematcher-web
+    runtime: static
     rootDir: frontend
     buildCommand: npm ci && npm run build
     staticPublishPath: dist
