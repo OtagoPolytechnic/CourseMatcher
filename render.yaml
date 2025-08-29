@@ -9,7 +9,7 @@ services:
     autoDeploy: true
     envVars:
       - key: PYTHON_VERSION
-        value: 3.11
+        value: 3.11.9
       - key: CORS_ORIGINS
         value: https://coursematcher-web.onrender.com
 
