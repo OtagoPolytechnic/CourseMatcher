@@ -120,7 +120,7 @@ const CourseList: React.FC = () => {
         {Object.entries(coursesByQuery).map(([query, courses]) => (
           <div key={query} className="mb-10">
             <div className="border-2 border-blue-300 rounded-xl p-6 bg-white/80 shadow-md">
-              {queries.length > 1 && courses.length > 0 && (
+              {courses.length > 0 && (
                 <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">
                   Matches for:{" "}
                   <span className="text-blue-700 font-semibold">
