@@ -1,7 +1,11 @@
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
-const SearchBar = () => {
+interface SearchBarProps {
+  targetPath?: string; 
+}
+
+const SearchBar: React.FC<SearchBarProps> = ({ targetPath }) =>{
   const location = useLocation();
   const navigate = useNavigate();
   const [queries, setQueries] = useState<string[]>([]);
@@ -14,15 +18,13 @@ const SearchBar = () => {
 
   const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const params = new URLSearchParams(location.search);
-
-    params.delete("q");
+    const params = new URLSearchParams();
 
     queries.forEach((query) => {
       if (query.trim()) params.append("q", query.trim());
     });
-
-    navigate(`${location.pathname}?${params.toString()}`, { replace: true });
+    const path = targetPath ?? location.pathname;
+    navigate(`${path}?${params.toString()}`);
   };
 
   return (
