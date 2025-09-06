@@ -4,18 +4,24 @@ import { useLocation, useNavigate } from "react-router-dom";
 const SearchBar = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  const [q, setQ] = useState("");
+  const [queries, setQueries] = useState<string[]>([]);
 
   useEffect(() => {
     const params = new URLSearchParams(location.search);
-    setQ(params.get("q") ?? "");
+    const allQ = params.getAll("q");
+    setQueries(allQ.length > 0 ? allQ : []);
   }, [location.search]);
 
   const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const params = new URLSearchParams(location.search);
-    if (q.trim()) params.set("q", q.trim());
-    else params.delete("q");
+
+    params.delete("q");
+
+    queries.forEach((query) => {
+      if (query.trim()) params.append("q", query.trim());
+    });
+
     navigate(`${location.pathname}?${params.toString()}`, { replace: true });
   };
 
@@ -24,11 +30,18 @@ const SearchBar = () => {
       onSubmit={onSubmit}
       className="flex flex-col items-center gap-4 w-full px-4"
     >
-      <input
-        value={q}
-        onChange={(e) => setQ(e.target.value)}
-        placeholder="Search for Courses"
-        className="w-full max-w-2xl h-10 text-base px-4 py-2 border border-gray-300 rounded-md shadow-sm"
+      <textarea
+        value={queries.join("\n")}
+        onChange={(e) =>
+          setQueries(
+            e.target.value
+              .split(/\n/)
+              .map((q) => q.trim())
+              .filter((q) => q.length > 0)
+          )
+        }
+        placeholder="Paste multiple course descriptions"
+        className="w-full max-w-2xl h-32 text-base px-4 py-2 border border-gray-300 rounded-md shadow-sm"
       />
       <button
         type="submit"
