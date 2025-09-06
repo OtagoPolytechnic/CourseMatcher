@@ -4,7 +4,7 @@ const ProgramNav = () => {
   const navigate = useNavigate();
 
   const programs = [
-    { name: 'Bachelor of Information Technology', path: '/' },
+    { name: 'Bachelor of Information Technology', path: '/it' },
     { name: 'Bachelor of Business', path: '/business' },
     { name: 'Bachelor of Design', path: '/design' },
     { name: 'Bachelor of Culinary Arts', path: '/culinary' },
