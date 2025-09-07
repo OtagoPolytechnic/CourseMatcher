@@ -42,8 +42,8 @@ const SearchBar: React.FC<SearchBarProps> = ({ targetPath }) =>{
               .filter((q) => q.length > 0)
           )
         }
-        placeholder="Paste multiple course descriptions"
-        className="w-full max-w-3xl h-48 text-lg px-4 py-3 border border-gray-300 rounded-lg shadow-md resize-y"
+        placeholder="Paste course descriptions here..."
+        className="bg-blue-100 w-full max-w-3xl h-48 text-lg px-4 py-3 border border-gray-300 rounded-lg shadow-md resize-y focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-700"
       />
       <button
         type="submit"
