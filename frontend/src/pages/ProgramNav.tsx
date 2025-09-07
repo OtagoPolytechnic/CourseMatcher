@@ -11,27 +11,46 @@ const ProgramNav = () => {
   ];
 
   return (
-    <div className="fixed top-4 right-4 z-50 group">
+    <div className="fixed top-4 right-4 z-50 flex items-center gap-3">
+
+    <button
+      onClick={() => navigate("/")}
+      aria-label="Go to Home"
+      className="bg-blue-700 hover:bg-blue-800 transition-colors w-12 h-12 rounded-lg flex justify-center items-center shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-300"
+    >
+      <img
+        src="/homeIcon.png"
+        alt="Home"
+        className="w-10 h-10 object-contain pointer-events-none"
+        draggable={false}
+      />
+    </button>
+
+    <div className="relative group">
       <div className="bg-blue-700 hover:bg-blue-800 transition-colors w-12 h-12 rounded-lg flex flex-col justify-center items-center cursor-pointer shadow-lg">
         <div className="w-6 h-0.5 bg-white mb-1" />
         <div className="w-6 h-0.5 bg-white mb-1" />
         <div className="w-6 h-0.5 bg-white" />
       </div>
-      
+
       <div className="absolute right-0 mt-2 w-72 bg-white border border-gray-200 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
-        <h3 className="text-md font-semibold px-4 py-3 text-blue-700 border-b">Select a Program</h3>
+        <h3 className="text-md font-semibold px-4 py-3 text-blue-700 border-b">
+          Select a Program
+        </h3>
         <ul>
           {programs.map((program) => (
             <li key={program.path}>
               <button
                 onClick={() => navigate(program.path)}
-                className="block w-full text-left px-4 py-2 text-sm bg-blue-50 hover:bg-blue-100 text-blue-800 rounded-md transition-all duration-200">
+                className="block w-full text-left px-4 py-2 text-sm bg-blue-50 hover:bg-blue-100 text-blue-800 rounded-md transition-all duration-200"
+              >
                 {program.name}
               </button>
             </li>
           ))}
         </ul>
       </div>
+    </div>
     </div>
   );
 };
