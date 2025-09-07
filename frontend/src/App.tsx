@@ -4,6 +4,7 @@ import BachelorIT from "./pages/BachelorIT";
 import BachelorBusiness from "./pages/BachelorBusiness";
 import BachelorCulinary from "./pages/BachelorCulinary";
 import BachelorDesign from "./pages/BachelorDesign";
+import Home from "./pages/Home";
 import "./style.css";
 
 function App() {
@@ -11,7 +12,8 @@ function App() {
       <Router>
         <ProgramNav />
         <Routes>
-          <Route path="/" element={<BachelorIT />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/it" element={<BachelorIT />} />
           <Route path="/design" element={<BachelorDesign />} />
           <Route path="/business" element={<BachelorBusiness />} />
           <Route path="/culinary" element={<BachelorCulinary />} />

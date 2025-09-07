@@ -113,22 +113,17 @@ const CourseList: React.FC = () => {
           Bachelor of Information Technology Courses
         </h1>
 
-        <div className="max-w-2xl mx-auto w-full px-4 mb-8">
-          <SearchBar />
-        </div>
-
         {Object.entries(coursesByQuery).map(([query, courses]) => (
           <div key={query} className="mb-10">
             <div className="border-2 border-blue-300 rounded-xl p-6 bg-white/80 shadow-md">
-              {courses.length > 0 && (
-                <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">
-                  Matches for:{" "}
-                  <span className="text-blue-700 font-semibold">
-                    {courses[0].course_title}
-                  </span>
-                </h2>
-              )}
-
+                {courses.length > 0 && (
+  <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">
+    Matches for:{" "}
+    <span className="text-blue-700 font-semibold">
+      {courses[0].course_title}
+    </span>
+  </h2>
+)}
               <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto items-stretch">
                 {courses.map((course) => {
                   const key = `${query}-${course.sms_code}`;
