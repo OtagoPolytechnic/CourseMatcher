@@ -13,10 +13,41 @@ interface Course {
   similarity?: number;
 }
 
-const getEmojiFromScore = (score: number): string => {
-  if (score > 0.7) return "🟢";
-  if (score >= 0.5) return "🟠";
-  return "🔴";
+const SimilarityBadge: React.FC<{ score: number }> = ({ score }) => {
+  let label = "Low Match";
+  let color = "bg-red-100 text-red-700";
+
+  if (score > 0.7) {
+    label = "High Match";
+    color = "bg-green-100 text-green-700";
+  } else if (score >= 0.5) {
+    label = "Medium Match";
+    color = "bg-yellow-100 text-yellow-700";
+  }
+
+  return (
+    <span
+      className={`ml-2 inline-block px-2 py-1 text-xs font-semibold rounded-full ${color}`}
+    >
+      {label}
+    </span>
+  );
+};
+
+const SimilarityBar: React.FC<{ score: number }> = ({ score }) => {
+  const percentage = Math.round(score * 100);
+  let barColor = "bg-red-500";
+  if (score > 0.7) barColor = "bg-green-500";
+  else if (score >= 0.5) barColor = "bg-yellow-500";
+
+  return (
+    <div className="w-full bg-gray-200 rounded-full h-2 mt-2">
+      <div
+        className={`${barColor} h-2 rounded-full`}
+        style={{ width: `${percentage}%` }}
+      ></div>
+    </div>
+  );
 };
 
 const CourseList: React.FC = () => {
@@ -198,18 +229,25 @@ const CourseList: React.FC = () => {
                   {courses.map((course) => {
                     const key = `${query}-${course.sms_code}`;
                     const isExpanded = expandedId === key;
+                    const score = course.similarity ?? 0;
 
                     return (
                       <div
                         key={key}
                         className="bg-white rounded-xl shadow-md hover:shadow-xl hover:scale-[1.01] transition-all duration-200 ease-in-out p-6 border border-gray-100 flex flex-col justify-between"
                       >
-                        <h2 className="text-xl font-bold text-blue-800 text-center mb-4 min-h-[3rem]">
-                          {course.similarity !== undefined
-                            ? getEmojiFromScore(course.similarity) + " "
-                            : ""}
+                        <h2 className="text-xl font-bold text-blue-800 text-center mb-4 min-h-[1rem]">
                           {course.course_title}
                         </h2>
+
+                        {course.similarity !== undefined && (
+                          <div className="flex flex-col items-center mb-3">
+                            <SimilarityBadge score={score} />
+                            <div className="w-full mt-1">
+                              <SimilarityBar score={score} />
+                            </div>
+                          </div>
+                        )}
 
                         <p
                           className={`text-gray-700 text-sm mb-4 ${
