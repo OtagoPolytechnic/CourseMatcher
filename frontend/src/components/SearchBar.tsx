@@ -43,7 +43,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ targetPath }) =>{
           )
         }
         placeholder="Paste multiple course descriptions"
-        className="w-full max-w-2xl h-32 text-base px-4 py-2 border border-gray-300 rounded-md shadow-sm"
+        className="w-full max-w-3xl h-48 text-lg px-4 py-3 border border-gray-300 rounded-lg shadow-md resize-y"
       />
       <button
         type="submit"
