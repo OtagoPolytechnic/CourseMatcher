@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useMemo } from "react";
 import { useLocation } from "react-router-dom";
-import SearchBar from "../components/SearchBar";
 const API_BASE = import.meta.env.VITE_API_BASE_URL;
 
 interface Course {
@@ -14,21 +13,54 @@ interface Course {
   similarity?: number;
 }
 
-const getEmojiFromScore = (score: number): string => {
-  if (score > 0.7) return "🟢";
-  if (score >= 0.5) return "🟠";
-  return "🔴";
+const SimilarityBadge: React.FC<{ score: number }> = ({ score }) => {
+  let label = "Low Match";
+  let color = "bg-red-100 text-red-700";
+
+  if (score > 0.7) {
+    label = "High Match";
+    color = "bg-green-100 text-green-700";
+  } else if (score >= 0.5) {
+    label = "Medium Match";
+    color = "bg-yellow-100 text-yellow-700";
+  }
+
+  return (
+    <span
+      className={`ml-2 inline-block px-2 py-1 text-xs font-semibold rounded-full ${color}`}
+    >
+      {label}
+    </span>
+  );
+};
+
+const SimilarityBar: React.FC<{ score: number }> = ({ score }) => {
+  const percentage = Math.round(score * 100);
+  let barColor = "bg-red-500";
+  if (score > 0.7) barColor = "bg-green-500";
+  else if (score >= 0.5) barColor = "bg-yellow-500";
+
+  return (
+    <div className="w-full bg-gray-200 rounded-full h-2 mt-2">
+      <div
+        className={`${barColor} h-2 rounded-full`}
+        style={{ width: `${percentage}%` }}
+      ></div>
+    </div>
+  );
 };
 
 const CourseList: React.FC = () => {
-  const [courses, setCourses] = useState<Course[]>([]);
+  const [coursesByQuery, setCoursesByQuery] = useState<
+    Record<string, Course[]>
+  >({});
   const [loading, setLoading] = useState(true);
   const [expandedId, setExpandedId] = useState<string | null>(null);
 
   const location = useLocation();
-  const query = useMemo(() => {
+  const queries = useMemo(() => {
     const params = new URLSearchParams(location.search);
-    return params.get("q") ?? "";
+    return params.getAll("q");
   }, [location.search]);
 
   useEffect(() => {
@@ -38,33 +70,45 @@ const CourseList: React.FC = () => {
       try {
         setLoading(true);
 
-        if (!query || query.trim().length < 3) {
+        if (queries.length === 0) {
           const res = await fetch(`${API_BASE}/courses/`);
           const data = await res.json();
-          if (!abort) setCourses(data.courses ?? []);
+          if (!abort) setCoursesByQuery({ All: data.courses ?? [] });
           return;
         }
 
-        const url = new URL(`${API_BASE}/search/`);
-        url.searchParams.set("q", query);
-        url.searchParams.set("k", "12");
-        const res = await fetch(url.toString());
-        const data = await res.json();
+        const results: Record<string, Course[]> = {};
 
-        console.log("Fetched similarity scores with color labels:");
-        (data.results ?? []).slice(0, 6).forEach((course: Course) => {
-          const score = course.similarity ?? 0;
-          let label = "";
+        for (const q of queries) {
+          const url = new URL(`${API_BASE}/search/`);
+          url.searchParams.set("q", q);
+          url.searchParams.set("k", "6");
 
-          if (score > 0.7) label = "Green";
-          else if (score >= 0.5) label = "Orange";
-          else label = "Red";
+          const res = await fetch(url.toString());
+          if (!res.ok) {
+            console.error(`Search failed for query: ${q}`);
+            continue;
+          }
 
-          console.log(`${course.course_title}: ${score.toFixed(4)} → ${label}`);
-        });
+          const data = await res.json();
+          results[q] = (data.results ?? []).slice(0, 3);
 
-        if (!abort) setCourses((data.results ?? []).slice(0, 6));
-        if (!abort) setExpandedId(null);
+          results[q].forEach((course: Course) => {
+            const score = course.similarity ?? 0;
+            let label = "";
+            if (score > 0.7) label = "Green";
+            else if (score >= 0.5) label = "Orange";
+            else label = "Red";
+            console.log(
+              `${course.course_title}: ${score.toFixed(4)} → ${label}`
+            );
+          });
+        }
+
+        if (!abort) {
+          setCoursesByQuery(results);
+          setExpandedId(null);
+        }
       } catch (error) {
         console.error("Failed to fetch courses:", error);
       } finally {
@@ -76,7 +120,7 @@ const CourseList: React.FC = () => {
     return () => {
       abort = true;
     };
-  }, [query]);
+  }, [queries]);
 
   if (loading) {
     return (
@@ -99,70 +143,161 @@ const CourseList: React.FC = () => {
           Bachelor of Information Technology Courses
         </h1>
 
-        <div className="max-w-2xl mx-auto w-full px-4 mb-8">
-          <SearchBar />
-        </div>
+        {queries.length === 0 ? (
+          <div className="mb-12">
+            <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">
+              Matches for:{" "}
+              <span className="text-blue-700 font-semibold">All</span>
+            </h2>
 
-        <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto px-4 items-stretch">
-          {courses.map((course) => {
-            const key = course.sms_code;
-            const isExpanded = expandedId === key;
+            <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto items-stretch">
+              {coursesByQuery["All"]?.map((course) => {
+                const key = `All-${course.sms_code}`;
+                const isExpanded = expandedId === key;
+
+                return (
+                  <div
+                    key={key}
+                    className="bg-white rounded-xl shadow-md hover:shadow-xl hover:scale-[1.01] transition-all duration-200 ease-in-out p-6 border border-gray-100 flex flex-col justify-between"
+                  >
+                    <h2 className="text-xl font-bold text-blue-800 text-center mb-4 min-h-[3rem]">
+                      {course.course_title}
+                    </h2>
+
+                    <p
+                      className={`text-gray-700 text-sm mb-4 ${
+                        !isExpanded ? "line-clamp-5" : ""
+                      }`}
+                    >
+                      {course.description}
+                    </p>
+
+                    <button
+                      onClick={() => setExpandedId(isExpanded ? null : key)}
+                      className="inline-block bg-blue-100 text-blue-700 font-semibold text-sm px-3 py-1 rounded-full hover:bg-blue-200 transition-all duration-200 mb-4"
+                    >
+                      {isExpanded ? "Show Less" : "Read More"}
+                    </button>
+
+                    <div className="text-sm text-gray-600 space-y-1 mt-auto">
+                      <p>
+                        <span className="font-semibold text-blue-700">
+                          Credits:
+                        </span>{" "}
+                        {course.credits}
+                      </p>
+                      <p>
+                        <span className="font-semibold text-blue-700">
+                          Year:
+                        </span>{" "}
+                        {course.year}
+                      </p>
+                      <p>
+                        <span className="font-semibold text-blue-700">
+                          SMS Code:
+                        </span>{" "}
+                        {course.sms_code}
+                      </p>
+                      <p>
+                        <span className="font-semibold text-blue-700">
+                          Program:
+                        </span>{" "}
+                        {course.program}
+                      </p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        ) : (
+          Object.entries(coursesByQuery).map(([query, courses]) => {
+            const topMatch = courses
+              .slice()
+              .sort((a, b) => (b.similarity ?? 0) - (a.similarity ?? 0))[0];
 
             return (
-              <div
-                key={key}
-                className="bg-white rounded-xl shadow-md hover:shadow-xl hover:scale-[1.01] transition-all duration-200 ease-in-out p-6 border border-gray-100 flex flex-col justify-between"
-              >
-                <h2 className="text-xl font-bold text-blue-800 text-center mb-4 min-h-[3rem]">
-                  {course.similarity !== undefined
-                    ? getEmojiFromScore(course.similarity) + " "
-                    : ""}
-                  {course.course_title}
+              <div key={query} className="mb-12">
+                <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">
+                  Matches for:{" "}
+                  <span className="text-blue-700 font-semibold">
+                    {topMatch?.course_title || query}
+                  </span>
                 </h2>
 
-                <p
-                  className={`text-gray-700 text-sm mb-4 ${
-                    !isExpanded ? "line-clamp-5" : ""
-                  }`}
-                >
-                  {course.description}
-                </p>
+                <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto items-stretch">
+                  {courses.map((course) => {
+                    const key = `${query}-${course.sms_code}`;
+                    const isExpanded = expandedId === key;
+                    const score = course.similarity ?? 0;
 
-                <button
-                  onClick={() => setExpandedId(isExpanded ? null : key)}
-                  className="inline-block bg-blue-100 text-blue-700 font-semibold text-sm px-3 py-1 rounded-full hover:bg-blue-200 transition-all duration-200 mb-4"
-                >
-                  {isExpanded ? "Show Less" : "Read More"}
-                </button>
+                    return (
+                      <div
+                        key={key}
+                        className="bg-white rounded-xl shadow-md hover:shadow-xl hover:scale-[1.01] transition-all duration-200 ease-in-out p-6 border border-gray-100 flex flex-col justify-between"
+                      >
+                        <h2 className="text-xl font-bold text-blue-800 text-center mb-4 min-h-[1rem]">
+                          {course.course_title}
+                        </h2>
 
-                <div className="text-sm text-gray-600 space-y-1 mt-auto">
-                  <p>
-                    <span className="font-semibold text-blue-700">
-                      Credits:
-                    </span>{" "}
-                    {course.credits}
-                  </p>
-                  <p>
-                    <span className="font-semibold text-blue-700">Year:</span>{" "}
-                    {course.year}
-                  </p>
-                  <p>
-                    <span className="font-semibold text-blue-700">
-                      SMS Code:
-                    </span>{" "}
-                    {course.sms_code}
-                  </p>
-                  <p>
-                    <span className="font-semibold text-blue-700">
-                      Program:
-                    </span>{" "}
-                    {course.program}
-                  </p>
+                        {course.similarity !== undefined && (
+                          <div className="flex flex-col items-center mb-3">
+                            <SimilarityBadge score={score} />
+                            <div className="w-full mt-1">
+                              <SimilarityBar score={score} />
+                            </div>
+                          </div>
+                        )}
+
+                        <p
+                          className={`text-gray-700 text-sm mb-4 ${
+                            !isExpanded ? "line-clamp-5" : ""
+                          }`}
+                        >
+                          {course.description}
+                        </p>
+
+                        <button
+                          onClick={() => setExpandedId(isExpanded ? null : key)}
+                          className="inline-block bg-blue-100 text-blue-700 font-semibold text-sm px-3 py-1 rounded-full hover:bg-blue-200 transition-all duration-200 mb-4"
+                        >
+                          {isExpanded ? "Show Less" : "Read More"}
+                        </button>
+
+                        <div className="text-sm text-gray-600 space-y-1 mt-auto">
+                          <p>
+                            <span className="font-semibold text-blue-700">
+                              Credits:
+                            </span>{" "}
+                            {course.credits}
+                          </p>
+                          <p>
+                            <span className="font-semibold text-blue-700">
+                              Year:
+                            </span>{" "}
+                            {course.year}
+                          </p>
+                          <p>
+                            <span className="font-semibold text-blue-700">
+                              SMS Code:
+                            </span>{" "}
+                            {course.sms_code}
+                          </p>
+                          <p>
+                            <span className="font-semibold text-blue-700">
+                              Program:
+                            </span>{" "}
+                            {course.program}
+                          </p>
+                        </div>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
             );
-          })}
-        </div>
+          })
+        )}
       </div>
     </div>
   );
