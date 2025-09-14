@@ -39,7 +39,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ targetPath }) =>{
         onChange={(e) =>
           setQueryText(e.target.value)}
         placeholder="Paste course descriptions here..."
-        className="bg-blue-100 w-full max-w-3xl h-48 text-lg px-4 py-3 border border-gray-300 rounded-lg shadow-md resize-y focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-700"
+        className="bg-blue-100 w-full max-w-3xl h-48 max-h-[calc(100vh-14rem)] overflow-auto text-lg px-4 py-3 border border-gray-300 rounded-lg shadow-md resize-y focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-700"
       />
       <button
         type="submit"

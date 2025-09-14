@@ -26,7 +26,6 @@ echo Installing Python packages...
 pip install -r requirements.txt
 if %errorlevel% neq 0 (
     echo Failed to install Python dependencies
-    exit /b 1
 )
 
 :: Deactivate
@@ -37,6 +36,11 @@ cd ..
 echo.
 echo Setting up React frontend...
 cd frontend
+
+if not exist .env (
+    echo Creating frontend .env file...
+    echo VITE_API_BASE_URL=http://localhost:8000 > .env
+)
 
 echo Installing npm packages...
 call npm install

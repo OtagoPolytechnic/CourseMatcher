@@ -7,7 +7,7 @@ const Home: React.FC = () => {
       className="min-h-screen w-full bg-cover bg-center"
       style={{ backgroundImage: "url('/appBackground.jpg')" }}
     >
-      <div className="min-h-screen w-full bg-white/70 px-4 flex flex-col justify-center items-center space-y-12">
+      <div className="min-h-screen w-full bg-white/70 px-4 pb-32 flex flex-col justify-center items-center space-y-12">
         <div className="mx-auto max-w-7xl px-4">
           <div className="flex items-center justify-center gap-4 mb-12">
             <img
