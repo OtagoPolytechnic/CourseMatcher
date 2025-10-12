@@ -8,21 +8,23 @@ interface SearchBarProps {
 const SearchBar: React.FC<SearchBarProps> = ({ targetPath }) =>{
   const location = useLocation();
   const navigate = useNavigate();
-  const [queries, setQueries] = useState<string[]>([]);
+  const [queryText, setQueryText] = useState<string>("");
 
   useEffect(() => {
     const params = new URLSearchParams(location.search);
     const allQ = params.getAll("q");
-    setQueries(allQ.length > 0 ? allQ : []);
+    setQueryText(allQ.join("\n"));
   }, [location.search]);
 
   const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const params = new URLSearchParams();
 
-    queries.forEach((query) => {
-      if (query.trim()) params.append("q", query.trim());
-    });
+    queryText
+      .split(/\n/) 
+      .map((q) => q.trim()) 
+      .filter((q) => q.length > 0) 
+      .forEach((q) => params.append("q", q));
     const path = targetPath ?? location.pathname;
     navigate(`${path}?${params.toString()}`);
   };
@@ -33,17 +35,11 @@ const SearchBar: React.FC<SearchBarProps> = ({ targetPath }) =>{
       className="flex flex-col items-center gap-4 w-full px-4"
     >
       <textarea
-        value={queries.join("\n")}
+        value={queryText}
         onChange={(e) =>
-          setQueries(
-            e.target.value
-              .split(/\n/)
-              .map((q) => q.trim())
-              .filter((q) => q.length > 0)
-          )
-        }
+          setQueryText(e.target.value)}
         placeholder="Paste course descriptions here..."
-        className="bg-blue-100 w-full max-w-3xl h-48 text-lg px-4 py-3 border border-gray-300 rounded-lg shadow-md resize-y focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-700"
+        className="bg-blue-100 w-full max-w-3xl h-48 max-h-[calc(100vh-14rem)] overflow-auto text-lg px-4 py-3 border border-gray-300 rounded-lg shadow-md resize-y focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-700"
       />
       <button
         type="submit"
