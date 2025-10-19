@@ -51,17 +51,22 @@ const SimilarityBar: React.FC<{ score: number }> = ({ score }) => {
 };
 
 const CourseList: React.FC = () => {
-  const [coursesByQuery, setCoursesByQuery] = useState<
-    Record<string, Course[]>
-  >({});
+  const [coursesByQuery, setCoursesByQuery] = useState<Record<string, Course[]>>({});
   const [loading, setLoading] = useState(true);
   const [expandedId, setExpandedId] = useState<string | null>(null);
 
   const location = useLocation();
-  const queries = useMemo(() => {
-    const params = new URLSearchParams(location.search);
-    return params.getAll("q");
-  }, [location.search]);
+
+  const { queries, titles } = useMemo(() => {
+  const params = new URLSearchParams(location.search);
+  const q = params.getAll("q");
+  const t: Record<string, string> = {};
+  q.forEach((_, i) => {
+    const titleParam = params.get(`title${i}`);
+    if (titleParam) t[i] = titleParam;
+  });
+  return { queries: q, titles: t };
+}, [location.search]);
 
   useEffect(() => {
     let abort = false;
@@ -211,17 +216,25 @@ const CourseList: React.FC = () => {
             </div>
           </div>
         ) : (
-          Object.entries(coursesByQuery).map(([query, courses]) => {
+          Object.entries(coursesByQuery).map(([query, courses], index) => {
             const topMatch = courses
               .slice()
               .sort((a, b) => (b.similarity ?? 0) - (a.similarity ?? 0))[0];
 
+            const quotedTitleMatch = query.match(/"([^"]+)"\s+is/i);
+            const userProvidedTitle = quotedTitleMatch ? quotedTitleMatch[1].trim() : "";
+
+            const displayTitle =
+    userProvidedTitle && userProvidedTitle.length > 0
+      ? userProvidedTitle
+      : topMatch?.course_title || query;
+      
             return (
               <div key={query} className="mb-12">
                 <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">
                   Matches for:{" "}
                   <span className="text-blue-700 font-semibold">
-                    {topMatch?.course_title || query}
+                    {displayTitle}
                   </span>
                 </h2>
 

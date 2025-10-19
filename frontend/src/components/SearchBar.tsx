@@ -13,21 +13,34 @@ const SearchBar: React.FC<SearchBarProps> = ({ targetPath }) =>{
   useEffect(() => {
     const params = new URLSearchParams(location.search);
     const allQ = params.getAll("q");
-    setQueryText(allQ.join("\n"));
+    setQueryText(allQ.map((q) => `"${q}"`).join(" "));
   }, [location.search]);
 
   const onSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    const params = new URLSearchParams();
+  e.preventDefault();
+  const params = new URLSearchParams();
 
-    queryText
-      .split(/\n/) 
-      .map((q) => q.trim()) 
-      .filter((q) => q.length > 0) 
-      .forEach((q) => params.append("q", q));
-    const path = targetPath ?? location.pathname;
-    navigate(`${path}?${params.toString()}`);
-  };
+  // capture all quoted parts
+  const matches = [...queryText.matchAll(/"([^"]*?)"(?=\s|$)/g)].map((m) => m[1]);
+  const lines = queryText
+    .split("\n")
+    .map((l) => l.trim())
+    .filter((l) => l.length > 0);
+
+  // Pair each description line with its title (if any)
+  lines.forEach((line, index) => {
+    const q = matches[index] ? line : line; // keep whole line as query
+    params.append("q", q);
+
+    // Send separate title param per query index
+    if (matches[index] && matches[index].trim()) {
+      params.append(`title${index}`, matches[index].trim());
+    }
+  });
+
+  const path = targetPath ?? location.pathname;
+  navigate(`${path}?${params.toString()}`);
+};
 
   return (
     <form
