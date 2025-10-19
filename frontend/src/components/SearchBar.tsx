@@ -20,19 +20,16 @@ const SearchBar: React.FC<SearchBarProps> = ({ targetPath }) =>{
   e.preventDefault();
   const params = new URLSearchParams();
 
-  // capture all quoted parts
   const matches = [...queryText.matchAll(/"([^"]*?)"(?=\s|$)/g)].map((m) => m[1]);
   const lines = queryText
     .split("\n")
     .map((l) => l.trim())
     .filter((l) => l.length > 0);
 
-  // Pair each description line with its title (if any)
   lines.forEach((line, index) => {
-    const q = matches[index] ? line : line; // keep whole line as query
+    const q = matches[index] ? line : line;
     params.append("q", q);
 
-    // Send separate title param per query index
     if (matches[index] && matches[index].trim()) {
       params.append(`title${index}`, matches[index].trim());
     }
@@ -56,7 +53,12 @@ const SearchBar: React.FC<SearchBarProps> = ({ targetPath }) =>{
       />
       <button
         type="submit"
-        className="bg-blue-700 text-white px-4 py-2 rounded-md hover:bg-blue-800 transition-colors duration-200"
+        disabled={!/"[^"]+?"/.test(queryText)}
+        className={`px-4 py-2 rounded-md font-medium transition-colors duration-200 ${
+          /"[^"]+?"/.test(queryText)
+            ? "bg-blue-700 text-white hover:bg-blue-800"
+            : "bg-gray-400 text-gray-200 cursor-not-allowed"
+        }`}
       >
         Search
       </button>
