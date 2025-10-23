@@ -81,6 +81,68 @@ Text:
         print("JSON decoding failed:", e)
         print(response.choices[0].message.function_call.arguments)
         return None
+    
+def extract_courses_from_input(user_text: str):
+     # Clean up user text before sending to LLM
+    cleaned_text = re.sub(r"\n\s*\n", " ", user_text.strip())  # merges double newlines into one space
+    cleaned_text = re.sub(r"\s+", " ", cleaned_text)
 
+    prompt = f"""
+You are a structured parser that extracts course information.
+
+The user might paste one or more course descriptions. 
+Each course has a *title* and a *description*.
+
+  IMPORTANT RULES:
+- If the entire text clearly describes **only one course** (even if it has multiple sentences or paragraphs),
+  treat it as a **single course**.
+- Do NOT split a single course into multiple parts just because it has multiple sentences.
+- Only separate into multiple courses if the text clearly mentions multiple *course titles* or distinct subjects.
+- If no clear title is given, infer a short, meaningful course title based on the topic of the text.
+
+Return a list of objects, each containing:
+- course_title
+- description
+
+Text:
+{cleaned_text}
+"""
+
+    schema = {
+        "name": "extract_courses_from_input",
+        "description": "Extract structured course information (titles and descriptions) from input text.",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "courses": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "course_title": {"type": "string"},
+                            "description": {"type": "string"}
+                        },
+                        "required": ["course_title"]
+                    }
+                }
+            },
+            "required": ["courses"]
+        }
+    }
+
+    response = client.chat.completions.create(
+        model="gpt-4o-mini",
+        messages=[{"role": "user", "content": prompt}],
+        functions=[schema],
+        function_call={"name": "extract_courses_from_input"}
+    )
+
+    try:
+        args = response.choices[0].message.function_call.arguments
+        data = json.loads(args)
+        return data.get("courses", [])
+    except Exception as e:
+        print("Error extracting courses:", e)
+        return []
 
 

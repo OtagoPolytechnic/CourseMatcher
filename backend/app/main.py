@@ -5,6 +5,7 @@ import sqlite3
 import numpy as np
 import os
 from sentence_transformers import SentenceTransformer
+from app.course_parser import extract_courses_from_input
 # from app.course_parser import (
 #     extract_text,
 #     split_blocks,
@@ -50,11 +51,19 @@ def get_courses():
     return {"courses": rows}
 
 @app.get("/search")
-def semantic_search(q: str = Query(..., min_length=3, description="Paste course text here"),
-                    k: int = Query(5, ge=1, le=50)):
+def hybrid_semantic_search(q: str = Query(..., min_length=3, description="Paste one or more course descriptions"),
+                           k: int = Query(5, ge=1, le=50)):
+    """
+    Hybrid semantic search:
+    - Uses LLM to extract one or more courses (titles + descriptions)
+    - Uses SentenceTransformer vector similarity for each extracted course
+    """
+    # 1️⃣ Extract course entries using GPT-4o-mini
+    parsed_courses = extract_courses_from_input(q)
+    if not parsed_courses:
+        parsed_courses = [{"course_title": q, "description": q}]  # fallback
 
-    q_vec = model.encode([q], normalize_embeddings=True).astype("float32")[0]
-
+    # 2️⃣ Load course embeddings from SQLite
     conn = sqlite3.connect(DB_PATH)
     conn.row_factory = sqlite3.Row
     cur = conn.cursor()
@@ -70,31 +79,38 @@ def semantic_search(q: str = Query(..., min_length=3, description="Paste course 
     conn.close()
 
     if not rows:
-        return {"results": [], "note": "No embeddings found. Seeded DB missing embeddings."}
+        return {"results": [], "note": "No embeddings found. Please ensure embeddings exist in DB."}
 
-    embs = np.vstack([np.frombuffer(r["embedding"], dtype=np.float32) for r in rows])  
+    embs = np.vstack([np.frombuffer(r["embedding"], dtype=np.float32) for r in rows])
 
-    sims = embs @ q_vec  
+    # 3️⃣ Run vector similarity for each extracted course
+    results_all = {}
+    for course in parsed_courses:
+        query_text = f"{course['course_title']}. {course.get('description', '')}"
+        q_vec = model.encode([query_text], normalize_embeddings=True).astype("float32")[0]
+        sims = embs @ q_vec  # cosine similarity via normalized vectors
 
-    top_idx = np.argsort(-sims)[:k]
-    results = []
-    for i in top_idx:
-        r = rows[i]
-        results.append({
-            "course_title": r["course_title"],
-            "sms_code": r["sms_code"],
-            "year": r["year"],
-            "credits": r["credits"],
-            "prerequisites": json.loads(r["prerequisites"] or "[]"),
-            "directed_learning_hours": r["directed_learning_hours"],
-            "workplace_learning_hours": r["workplace_learning_hours"],
-            "self_directed_learning_hours": r["self_directed_learning_hours"],
-            "total_learning_hours": r["total_learning_hours"],
-            "program": r["program"],
-            "description": r["description"],
-            "similarity": float(sims[i]),
-        })
-    return {"results": results}
+        top_idx = np.argsort(-sims)[:k]
+        matches = []
+        for i in top_idx:
+            r = rows[i]
+            matches.append({
+                "course_title": r["course_title"],
+                "sms_code": r["sms_code"],
+                "year": r["year"],
+                "credits": r["credits"],
+                "prerequisites": json.loads(r["prerequisites"] or "[]"),
+                "directed_learning_hours": r["directed_learning_hours"],
+                "workplace_learning_hours": r["workplace_learning_hours"],
+                "self_directed_learning_hours": r["self_directed_learning_hours"],
+                "total_learning_hours": r["total_learning_hours"],
+                "program": r["program"],
+                "description": r["description"],
+                "similarity": float(sims[i]),
+            })
+        results_all[course["course_title"]] = matches
+
+    return {"parsed_courses": parsed_courses, "results": results_all}
     
 # def parse_local_courses():
 #     file_path = "app/static/CourseInfo.txt" 
