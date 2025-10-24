@@ -2,10 +2,10 @@ import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
 interface SearchBarProps {
-  targetPath?: string;
+  targetPath?: string; 
 }
 
-const SearchBar: React.FC<SearchBarProps> = ({ targetPath }) => {
+const SearchBar: React.FC<SearchBarProps> = ({ targetPath }) =>{
   const location = useLocation();
   const navigate = useNavigate();
   const [queryText, setQueryText] = useState<string>("");
@@ -13,36 +13,21 @@ const SearchBar: React.FC<SearchBarProps> = ({ targetPath }) => {
   useEffect(() => {
     const params = new URLSearchParams(location.search);
     const allQ = params.getAll("q");
-    setQueryText(allQ.map((q) => `"${q}"`).join(" "));
+    setQueryText(allQ.join("\n"));
   }, [location.search]);
 
   const onSubmit = (e: React.FormEvent) => {
-  e.preventDefault();
+    e.preventDefault();
+    const params = new URLSearchParams();
 
-  // Clean up text: merge multiple newlines into one space
-  const cleanedText = queryText.replace(/\n\s*\n/g, " ").replace(/\s+/g, " ").trim();
-
-  const params = new URLSearchParams();
-  const matches = [...cleanedText.matchAll(/"([^"]*?)"(?=\s|$)/g)].map((m) => m[1]);
-
-  const lines = cleanedText
-    .split("\n")
-    .map((l) => l.trim())
-    .filter((l) => l.length > 0);
-
-  lines.forEach((line, index) => {
-    const q = matches[index] ? line : line;
-    params.append("q", q);
-
-    if (matches[index] && matches[index].trim()) {
-      params.append(`title${index}`, matches[index].trim());
-    }
-  });
+    const singleQuery = queryText.trim();
+  if (singleQuery.length > 0) {
+    params.append("q", singleQuery);
+  }
 
   const path = targetPath ?? location.pathname;
   navigate(`${path}?${params.toString()}`);
 };
-
 
   return (
     <form
@@ -51,18 +36,14 @@ const SearchBar: React.FC<SearchBarProps> = ({ targetPath }) => {
     >
       <textarea
         value={queryText}
-        onChange={(e) => setQueryText(e.target.value)}
+        onChange={(e) =>
+          setQueryText(e.target.value)}
         placeholder="Paste course descriptions here..."
         className="bg-blue-100 w-full max-w-3xl h-48 max-h-[calc(100vh-14rem)] overflow-auto text-lg px-4 py-3 border border-gray-300 rounded-lg shadow-md resize-y focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-700"
       />
       <button
         type="submit"
-        disabled={queryText.trim().length === 0}
-        className={`px-4 py-2 rounded-md font-medium transition-colors duration-200 ${
-          queryText.trim().length > 0
-            ? "bg-blue-700 text-white hover:bg-blue-800"
-            : "bg-gray-400 text-gray-200 cursor-not-allowed"
-        }`}
+        className="bg-blue-700 text-white px-4 py-2 rounded-md hover:bg-blue-800 transition-colors duration-200"
       >
         Search
       </button>

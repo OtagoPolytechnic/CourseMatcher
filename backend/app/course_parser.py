@@ -1,5 +1,7 @@
 from dotenv import load_dotenv
 from openai import OpenAI
+from pydantic import BaseModel
+from typing import List, Optional
 import re
 import os
 import json
@@ -82,23 +84,38 @@ Text:
         print(response.choices[0].message.function_call.arguments)
         return None
     
+# Define the structured output model
+class Course(BaseModel):
+    course_title: str
+    description: Optional[str] = None  # description is optional
+
+class CourseList(BaseModel):
+    courses: List[Course]
+
+
 def extract_courses_from_input(user_text: str):
-     # Clean up user text before sending to LLM
-    cleaned_text = re.sub(r"\n\s*\n", " ", user_text.strip())  # merges double newlines into one space
-    cleaned_text = re.sub(r"\s+", " ", cleaned_text)
+    """
+    Uses the LLM to parse user-provided text, which may include one or several courses.
+    Extracts a structured list of {course_title, description} objects.
+    This version uses OpenAI structured output parsing.
+    """
 
+    # Clean text thoroughly to avoid accidental splitting
+    cleaned_text = re.sub(r"\s+", " ", user_text.strip())   # collapse multiple spaces
+    cleaned_text = re.sub(r"\n+", " ", cleaned_text)        # remove ALL newlines
+
+    # Prompt
     prompt = f"""
-You are a structured parser that extracts course information.
+You are a strict course parser.
 
-The user might paste one or more course descriptions. 
-Each course has a *title* and a *description*.
+Your task is to identify course descriptions. The user might paste one or more.
 
-  IMPORTANT RULES:
-- If the entire text clearly describes **only one course** (even if it has multiple sentences or paragraphs),
-  treat it as a **single course**.
-- Do NOT split a single course into multiple parts just because it has multiple sentences.
-- Only separate into multiple courses if the text clearly mentions multiple *course titles* or distinct subjects.
-- If no clear title is given, infer a short, meaningful course title based on the topic of the text.
+⚠️ VERY IMPORTANT RULES:
+- If the text clearly describes **only one course**, even across multiple paragraphs or sentences, return it as **ONE course only**.
+- Do NOT split based on newlines, indentation, bullet points, or paragraph separation.
+- Only split if there are **multiple course titles** (e.g., "Course Title:", "Machine Learning", "Data Structures").
+- If there’s no explicit title, infer one short, descriptive course title.
+- Never output two courses that come from a single continuous topic.
 
 Return a list of objects, each containing:
 - course_title
@@ -108,39 +125,25 @@ Text:
 {cleaned_text}
 """
 
-    schema = {
-        "name": "extract_courses_from_input",
-        "description": "Extract structured course information (titles and descriptions) from input text.",
-        "parameters": {
-            "type": "object",
-            "properties": {
-                "courses": {
-                    "type": "array",
-                    "items": {
-                        "type": "object",
-                        "properties": {
-                            "course_title": {"type": "string"},
-                            "description": {"type": "string"}
-                        },
-                        "required": ["course_title"]
-                    }
-                }
-            },
-            "required": ["courses"]
-        }
-    }
-
-    response = client.chat.completions.create(
-        model="gpt-4o-mini",
-        messages=[{"role": "user", "content": prompt}],
-        functions=[schema],
-        function_call={"name": "extract_courses_from_input"}
-    )
-
     try:
-        args = response.choices[0].message.function_call.arguments
-        data = json.loads(args)
-        return data.get("courses", [])
+        completion = client.chat.completions.parse(
+            model="gpt-4o-mini",
+            messages=[
+                {"role": "system", "content": "You are a precise text-to-structure parser."},
+                {"role": "user", "content": prompt}
+            ],
+            response_format=CourseList  # structured output type
+        )
+
+        result = completion.choices[0].message
+
+        if result.refusal:
+            print("Model refused:", result.refusal)
+            return []
+
+        parsed = result.parsed  # Already a validated CourseList instance
+        return parsed.courses
+
     except Exception as e:
         print("Error extracting courses:", e)
         return []
