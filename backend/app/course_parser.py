@@ -117,6 +117,13 @@ Your task is to identify course descriptions. The user might paste one or more.
 - If there’s no explicit title, infer one short, descriptive course title.
 - Never output two courses that come from a single continuous topic.
 
+🟡 SPECIAL RULE:
+- If the user provides **multiple short descriptions** (each under ~40 words) that appear to describe **different topics or skills**, treat them as **separate courses**.
+- Short descriptions are often separated by punctuation, newlines, or conjunctions like "and", "also", "additionally".
+- Example:
+  Input: "Python basics. Data visualization."
+  Output: Two courses — one for Python basics, one for Data visualization.
+
 Return a list of objects, each containing:
 - course_title
 - description
