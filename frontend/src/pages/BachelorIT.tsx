@@ -91,18 +91,16 @@ const CourseList: React.FC = () => {
           }
 
           const data = await res.json();
-          results[q] = (data.results ?? []).slice(0, 3);
-
-          results[q].forEach((course: Course) => {
-            const score = course.similarity ?? 0;
-            let label = "";
-            if (score > 0.7) label = "Green";
-            else if (score >= 0.5) label = "Orange";
-            else label = "Red";
-            console.log(
-              `${course.course_title}: ${score.toFixed(4)} → ${label}`
-            );
-          });
+          if (data.results && typeof data.results === "object" && !Array.isArray(data.results)) {
+            Object.entries(data.results).forEach(([title, list]) => {
+              results[title] = (list as Course[]).slice(0, 3);
+            });
+          } else if (Array.isArray(data.results)) {
+            // fallback for old format
+            results[q] = data.results.slice(0, 3);
+          } else {
+            console.warn("Unexpected results format:", data.results);
+          }
         }
 
         if (!abort) {
@@ -212,16 +210,14 @@ const CourseList: React.FC = () => {
           </div>
         ) : (
           Object.entries(coursesByQuery).map(([query, courses]) => {
-            const topMatch = courses
-              .slice()
-              .sort((a, b) => (b.similarity ?? 0) - (a.similarity ?? 0))[0];
+            const displayTitle = query;
 
             return (
               <div key={query} className="mb-12">
                 <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">
                   Matches for:{" "}
                   <span className="text-blue-700 font-semibold">
-                    {topMatch?.course_title || query}
+                    {displayTitle}
                   </span>
                 </h2>
 

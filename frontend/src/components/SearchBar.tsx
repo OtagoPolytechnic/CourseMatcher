@@ -20,14 +20,14 @@ const SearchBar: React.FC<SearchBarProps> = ({ targetPath }) =>{
     e.preventDefault();
     const params = new URLSearchParams();
 
-    queryText
-      .split(/\n/) 
-      .map((q) => q.trim()) 
-      .filter((q) => q.length > 0) 
-      .forEach((q) => params.append("q", q));
-    const path = targetPath ?? location.pathname;
-    navigate(`${path}?${params.toString()}`);
-  };
+    const singleQuery = queryText.trim();
+  if (singleQuery.length > 0) {
+    params.append("q", singleQuery);
+  }
+
+  const path = targetPath ?? location.pathname;
+  navigate(`${path}?${params.toString()}`);
+};
 
   return (
     <form
