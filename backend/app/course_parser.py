@@ -1,5 +1,7 @@
 from dotenv import load_dotenv
 from openai import OpenAI
+from pydantic import BaseModel
+from typing import List, Optional
 import re
 import os
 import json
@@ -81,6 +83,76 @@ Text:
         print("JSON decoding failed:", e)
         print(response.choices[0].message.function_call.arguments)
         return None
+    
+# Define the structured output model
+class Course(BaseModel):
+    course_title: str
+    description: Optional[str] = None  # description is optional
 
+class CourseList(BaseModel):
+    courses: List[Course]
+
+
+def extract_courses_from_input(user_text: str):
+    """
+    Uses the LLM to parse user-provided text, which may include one or several courses.
+    Extracts a structured list of {course_title, description} objects.
+    This version uses OpenAI structured output parsing.
+    """
+
+    # Clean text thoroughly to avoid accidental splitting
+    cleaned_text = re.sub(r"\s+", " ", user_text.strip())   # collapse multiple spaces
+    cleaned_text = re.sub(r"\n+", " ", cleaned_text)        # remove ALL newlines
+
+    # Prompt
+    prompt = f"""
+You are a strict course parser.
+
+Your task is to identify course descriptions. The user might paste one or more.
+
+⚠️ VERY IMPORTANT RULES:
+- If the text clearly describes **only one course**, even across multiple paragraphs or sentences, return it as **ONE course only**.
+- Do NOT split based on newlines, indentation, bullet points, or paragraph separation.
+- Only split if there are **multiple course titles** (e.g., "Course Title:", "Machine Learning", "Data Structures").
+- If there’s no explicit title, infer one short, descriptive course title.
+- Never output two courses that come from a single continuous topic.
+
+🟡 SPECIAL RULE:
+- If the user provides **multiple short descriptions** (each under ~40 words) that appear to describe **different topics or skills**, treat them as **separate courses**.
+- Short descriptions are often separated by punctuation, newlines, or conjunctions like "and", "also", "additionally".
+- Example:
+  Input: "Python basics. Data visualization."
+  Output: Two courses — one for Python basics, one for Data visualization.
+
+Return a list of objects, each containing:
+- course_title
+- description
+
+Text:
+{cleaned_text}
+"""
+
+    try:
+        completion = client.chat.completions.parse(
+            model="gpt-4o-mini",
+            messages=[
+                {"role": "system", "content": "You are a precise text-to-structure parser."},
+                {"role": "user", "content": prompt}
+            ],
+            response_format=CourseList  # structured output type
+        )
+
+        result = completion.choices[0].message
+
+        if result.refusal:
+            print("Model refused:", result.refusal)
+            return []
+
+        parsed = result.parsed  # Already a validated CourseList instance
+        return parsed.courses
+
+    except Exception as e:
+        print("Error extracting courses:", e)
+        return []
 
 
