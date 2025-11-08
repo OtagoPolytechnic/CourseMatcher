@@ -1,22 +1,39 @@
+# =============================================================
+# File: seed.py
+# Author: Navheen0508
+# Project: CourseMatcher
+# Description:
+#   Seeds the SQLite database with course data and precomputed
+#   embeddings for semantic search. Reads data from a JSON file,
+#   generates embeddings using SentenceTransformer, and stores
+#   both text fields and vector data into BIT.db
+# =============================================================
+
 import sqlite3
 import json
 import numpy as np
 from pathlib import Path
 from sentence_transformers import SentenceTransformer
 
+# Define file paths for database and JSON course data
 db_path = Path("app/data/BIT.db")
 json_path = Path("app/static/courses_BIT.json")
 
+# Ensure the database directory exists
 db_path.parent.mkdir(parents=True, exist_ok=True)
 
+# Load all course data from the JSON file
 with open(json_path, "r", encoding="utf-8") as f:
     data = json.load(f)["courses"]
 
+# Connect to the SQLite database
 conn = sqlite3.connect(db_path)
 cur = conn.cursor()
 
+# Drop any existing courses table to start fresh
 cur.execute("DROP TABLE IF EXISTS courses")
 
+# Create a new courses table with all required fields
 cur.execute("""
 CREATE TABLE IF NOT EXISTS courses (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -35,10 +52,12 @@ CREATE TABLE IF NOT EXISTS courses (
 )
 """)
 
+# Load the SentenceTransformer model for generating course embeddings
 model = SentenceTransformer("all-MiniLM-L6-v2")
 
 cur.execute("DELETE FROM courses")
 
+# Iterate through each course and insert it into the database
 for course in data:
     text = f"{course['course_title']}. {course['description']}"
     vec = model.encode([text], normalize_embeddings=True)[0]
@@ -65,7 +84,9 @@ for course in data:
         blob
     ))
 
+# Commit all changes and close the connection
 conn.commit()
 conn.close()
 
+# Completion confirmation
 print(f"Seeded courses into {db_path}")

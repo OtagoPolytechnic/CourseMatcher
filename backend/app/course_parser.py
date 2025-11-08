@@ -1,3 +1,13 @@
+# =============================================================
+# File: course_parser.py
+# Author: Navheen0508
+# Project: CourseMatcher
+# Description:
+#   Handles LLM-based course parsing for CourseMatcher.
+#   Extracts structured course fields and parses user text
+#   into course objects using OpenAI GPT models
+# =============================================================
+
 from dotenv import load_dotenv
 from openai import OpenAI
 from pydantic import BaseModel
@@ -6,10 +16,14 @@ import re
 import os
 import json
 
+# Load environment variables from the .env file
 load_dotenv(dotenv_path=".env")
+
+# Get and initialize OpenAI API client
 api_key = os.getenv("OPENAI_API_KEY")
 client = OpenAI(api_key=api_key)
 
+# Function schema used for structured extraction 
 function_schema = {
     "name": "extract_course_info",
     "description": "Extract all key course fields from a course description block.",
@@ -39,14 +53,16 @@ function_schema = {
     }
 }
 
-
+# Open the file from the specified file path in read mode and return all text from the file
 def extract_text(file_path: str) -> str:
     with open(file_path, "r", encoding="utf-8") as f:
         return f.read()
 
+# Splits large text by Course Title which marks the start of each course
 def split_blocks(text: str):
     return [f"**Course Title:** {block.strip()}" for block in text.split("**Course Title:**") if block.strip()]
 
+# Prompt for telling the model which fields to extract from a course block
 def extract_data(text):
     prompt = f"""
 You are given a course description block. Extract ONLY the following fields:
@@ -69,7 +85,7 @@ Respond only using the function_call schema provided.
 Text:
 {text}
 """
-
+ # Send the prompt to GPT and request structured output matching the schema
     response = client.chat.completions.create(
         model="gpt-4o-mini",
         messages=[{"role": "user", "content": prompt}],
@@ -84,15 +100,23 @@ Text:
         print(response.choices[0].message.function_call.arguments)
         return None
     
-# Define the structured output model
+# These 3 functions (extract_text, split_blocks, extract_data) handle local extraction of course data from a text document
+
+# The code below is used to parse live user input (from the search form) into structured course data
+
+# Define the structured output models (used to validate the LLM response)
+# These can also be placed in models.py for cleaner organization
+
+# Represents a single course object with a title and optional description
 class Course(BaseModel):
     course_title: str
     description: Optional[str] = None  # description is optional
 
+ # Holds a list of Course objects returned by the parser
 class CourseList(BaseModel):
     courses: List[Course]
 
-
+# Function which creates the prompt that defines how the model should interpret the text
 def extract_courses_from_input(user_text: str):
     """
     Uses the LLM to parse user-provided text, which may include one or several courses.
@@ -102,7 +126,7 @@ def extract_courses_from_input(user_text: str):
 
     # Clean text thoroughly to avoid accidental splitting
     cleaned_text = re.sub(r"\s+", " ", user_text.strip())   # collapse multiple spaces
-    cleaned_text = re.sub(r"\n+", " ", cleaned_text)        # remove ALL newlines
+    cleaned_text = re.sub(r"\n+", " ", cleaned_text)        # remove all newlines
 
     # Prompt
     prompt = f"""

@@ -1,8 +1,19 @@
+// =============================================================
+// File: ProgramNav.tsx
+// Author: Krittapas2004
+// Project: CourseMatcher
+// Description:
+//   Fixed navigation menu for switching between programs and
+//   returning to the home page. Renders a home button and a
+//   dropdown-style program selector.
+// =============================================================
+
 import { useNavigate } from 'react-router-dom';
 
 const ProgramNav = () => {
   const navigate = useNavigate();
-
+  
+  // List of available programs and their routes
   const programs = [
     { name: 'Bachelor of Information Technology', path: '/it' },
     { name: 'Bachelor of Business', path: '/business' },
