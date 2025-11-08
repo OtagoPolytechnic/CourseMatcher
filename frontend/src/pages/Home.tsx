@@ -1,3 +1,11 @@
+// =============================================================
+// File: Home.tsx
+// Author: Navheen0508
+// Project: CourseMatcher
+// Description:
+//   Landing/home page for the application.  
+// =============================================================
+
 import React from "react";
 import SearchBar from "../components/SearchBar";
 

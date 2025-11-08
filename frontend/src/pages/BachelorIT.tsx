@@ -23,7 +23,7 @@ interface Course {
   similarity?: number;
 }
 
-//Label showing how strong the match is. Change score values for different colour coded results
+// Label showing how strong the match is. Change score values for different colour coded results
 const SimilarityBadge: React.FC<{ score: number }> = ({ score }) => {
   let label = "Low Match";
   let color = "bg-red-100 text-red-700";
