@@ -1,3 +1,13 @@
+// =============================================================
+// File: SearchBar.tsx
+// Author: Krittapas2004
+// Project: CourseMatcher
+// Description:
+//   Reusable search bar component.
+//   Captures user input, syncs it with URL query params,
+//   and navigates to the target route for search results.
+// =============================================================
+
 import { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
@@ -8,10 +18,10 @@ interface SearchBarProps {
 const SearchBar: React.FC<SearchBarProps> = ({ targetPath }) =>{
   const location = useLocation();
   const navigate = useNavigate();
-  const [queryText, setQueryText] = useState<string>("");
+  const [queryText, setQueryText] = useState<string>(""); // Holds textarea content
 
   useEffect(() => {
-    const params = new URLSearchParams(location.search);
+    const params = new URLSearchParams(location.search); // When the URL changes, populate the textarea from all `q` query params
     const allQ = params.getAll("q");
     setQueryText(allQ.join("\n"));
   }, [location.search]);
@@ -19,12 +29,14 @@ const SearchBar: React.FC<SearchBarProps> = ({ targetPath }) =>{
   const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const params = new URLSearchParams();
-
+    
+    // Only add query param if user entered something
     const singleQuery = queryText.trim();
   if (singleQuery.length > 0) {
     params.append("q", singleQuery);
   }
-
+  
+  // Use provided targetPath if given, otherwise stay on current path
   const path = targetPath ?? location.pathname;
   navigate(`${path}?${params.toString()}`);
 };

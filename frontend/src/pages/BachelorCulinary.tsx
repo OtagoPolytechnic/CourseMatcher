@@ -1,3 +1,13 @@
+// =============================================================
+// File: BachelorCulinary.tsx
+// Author: Krittapas2004
+// Project: CourseMatcher
+// Description:
+//   Renders Culinary course matches.
+//   Fetches either all courses or semantic search results
+//   based on `q` query params in the URL.
+// =============================================================
+
 import SearchBar from "../components/SearchBar";
 
 const BachelorCulinary = () => {

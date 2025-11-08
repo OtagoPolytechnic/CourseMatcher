@@ -1,3 +1,11 @@
+# =============================================================
+# File: models.py
+# Author: Navheen0508
+# Project: CourseMatcher
+# Description:
+#   Defines Pydantic data models for course records  
+# =============================================================
+
 from typing import List
 from pydantic import BaseModel, Field, field_validator
 
