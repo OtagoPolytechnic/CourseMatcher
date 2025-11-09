@@ -16,6 +16,10 @@ Before starting, ensure you have the following installed:
 - [Python 3.11+](https://www.python.org/downloads/)
 - [Node.js + npm](https://nodejs.org/)
 
+**Also please review the file structure documentation for this project if you are a new contributer:**
+
+https://github.com/OtagoPolytechnic/CourseMatcher/wiki/File-Structure-Documentation
+
 ---
 
 ## 🚀 Project Setup Instructions
@@ -28,6 +32,28 @@ cd CourseMatcher
 ```
 ### 2️⃣ Run the automated setup script from the project root directory
 
+⚠️ Important
+
+- Before running the setup script, open the requirements.txt file located in the backend directory. Replace the following dependency line:
+  
+<img width="426" height="41" alt="image" src="https://github.com/user-attachments/assets/d05efe7f-7c71-4b99-b83d-323392d9c2cd" />
+
+With:
+
+<img width="109" height="23" alt="image" src="https://github.com/user-attachments/assets/b0ec305f-9de2-46c3-bd87-774fb2fa3230" />
+
+Why?
+
+The first dependency (2.4.0+cpu) is used only by Render during deployment to install the lightweight CPU-only version of PyTorch, avoiding timeouts caused by large CUDA packages.
+The second version (2.7.1) is for local development, where CUDA packages can safely be installed — though it may take longer to complete.
+
+⚠️ Note:
+Do not commit or push the torch==2.7.1 version requirements.txt file to the main branch.
+Keep this modification local to prevent deployment issues on Render.
+If needed, you can revert or manage the switch manually depending on your development environment.
+
+You can then run:
+
 ```bash
 ./setup.bat
 ```
@@ -38,6 +64,7 @@ Sets up a virtual environment for the backend
 - Installs all backend Python dependencies
 - Installs all frontend npm packages
 - Creates a default .env file in the backend
+- Creates a default .env file in the frontend
 
 ### 3️⃣ Add your OpenAI API key to the .env file
 
