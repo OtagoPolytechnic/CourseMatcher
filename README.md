@@ -48,6 +48,7 @@ The first dependency (2.4.0+cpu) is used only by Render during deployment to ins
 The second version (2.7.1) is for local development, where CUDA packages can safely be installed — though it may take longer to complete.
 
 ⚠️ Note:
+
 Do not commit or push the torch==2.7.1 version requirements.txt file to the main branch.
 Keep this modification local to prevent deployment issues on Render.
 If needed, you can revert or manage the switch manually depending on your development environment.
@@ -96,4 +97,11 @@ Navigate to http://127.0.0.1:8000. The courses endpoint can be found at http://l
 From the frontend/ folder simply run `npm run dev`
 
 <img width="512" height="248" alt="image" src="https://github.com/user-attachments/assets/d4f5df8b-5ff7-4a55-9cc6-a9387f1206d9" />
+
+Deployed API: https://coursematcher-api.onrender.com/courses/
+Deployed Web Service: https://coursematcher-web.onrender.com/
+
+⚠️ Note:
+
+The services are deployed using a free instance of Render. For that reason, the API service will go into a sleep mode if requests are not being actively made to it with a certain timeframe. If the service hasn't been accessed in a while, it could take a while to spin up and load the courses data.
 
